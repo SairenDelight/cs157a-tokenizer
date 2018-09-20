@@ -3,7 +3,7 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 import os
 import sys
 import mysql.connector
-
+import math
 
 
 # This function will get the data text directory in folder 'Project'
@@ -22,10 +22,19 @@ class CS157ATokenizer(object):
         self.documentOrder = []
         self.debugLevel = debugLevel
         self.con = con
+        self.curDocID = 0
+        self.curWordID = 1
+        self.words = {}
+        self.cursor = None
+
+        if self.con:
+            self.cursor = self.con.cursor()
 
 
     # This method will parse the text into an array of words
     def parseText(self, documentPath):
+        self.curDocID = self.curDocID + 1
+
         ps = PorterStemmer()
         word = ""
         whiteSpaceStack=[]
@@ -55,7 +64,10 @@ class CS157ATokenizer(object):
                     if(asciiCode == 32):
                         if(not whiteSpaceStack and word):
                             word = word.lower()
-                            self.documentOrder.append(ps.stem(word))
+                            word = ps.stem(word)
+                            self.documentOrder.append(word)
+                            self.updateWords(word, self.curDocID)
+
                             if(self.debugLevel > 0):
                                 print("Adding 1 >" + word + "<")
                             word=""
@@ -64,17 +76,57 @@ class CS157ATokenizer(object):
                     else:
                         if(word):
                             word = word.lower()
+                            word = ps.stem(word)
                             if(self.debugLevel > 0):
-                                print("Adding 2 >" + word + "<")  
-                            self.documentOrder.append(ps.stem(word))
+                                print("Adding 2 >" + word + "<")
+
+                            self.documentOrder.append(word)
+                            self.updateWords(word, self.curDocID)
 
                         if(self.debugLevel >0):
                             print("Adding 3 >" + char + "<")
-
-                        self.documentOrder.append(ps.stem(char))
+                        word1 = ps.stem(char)
+                        self.documentOrder.append(word1)
+                        self.updateWords(word1, self.curDocID)
                         word=""
+
         if(not not word):
             self.documentOrder.append(ps.stem(word))
+
+    def updateWords(self, token, did):
+        if token in self.words:
+            temp_dic = self.words[token]
+            if did in temp_dic:
+                temp_dic[did] = temp_dic[did] + 1
+                self.words[token] = temp_dic
+            else:
+                temp_dic[did] = 1
+                self.words[token] = temp_dic
+        else:
+            self.words[token] = {did: 1}
+
+        if self.con:
+            statement = "INSERT INTO Tokens(DID, TID, Word) VALUES(%s, %s, %s)"
+            values = (did, self.curWordID, token)
+            self.cursor.execute(statement, values)
+            self.con.commit()
+            self.curWordID += 1
+
+    def tfidfCalc(self, token, did):
+        tf = self.words[token][did]
+        df = len(self.words[token])
+        return tf * math.log(self.curDocID/df) * 1.0
+
+    def tfidfTableFill(self):
+        if self.con:
+            for token in self.words:
+                for doc_id in self.words[token]:
+                    statement = "insert into TFIDF(Word, DID, TFIDF) values(%s, %s, %s)"
+                    values = (token, doc_id, self.tfidfCalc(token, doc_id))
+                    self.cursor.execute(statement, values)
+                    self.con.commit()
+            self.con.commit()
+
 
     def freqStem(self):
         freqDict = {}
@@ -95,29 +147,41 @@ class CS157ATokenizer(object):
 
     def recreateTable(self):
         if(self.con):
-            cursor = self.con.cursor()
             try:
-                cursor.execute("DROP TABLE Stem")
+                self.cursor.execute("DROP TABLE Stem")
                 self.con.commit()
             except:
                 pass
-            cursor.execute("CREATE TABLE Stem (name CHAR(60), freq INT, PRIMARY KEY (name))")
+            self.cursor.execute("CREATE TABLE Stem (name CHAR(60), freq INT, PRIMARY KEY (name))")
             self.con.commit()
-            cursor.close()
+
+            try:
+                self.cursor.execute("DROP TABLE Tokens")
+                self.con.commit()
+            except:
+                pass
+            self.cursor.execute("CREATE TABLE Tokens(DID INT, TID INT, Word CHAR(60))")
+            self.con.commit()
+
+            try:
+                self.cursor.execute("DROP TABLE TFIDF")
+                self.con.commit()
+            except:
+                pass
+            self.cursor.execute("CREATE TABLE TFIDF(Word CHAR(60), DID INT, TFIDF FLOAT)")
+            self.con.commit()
 
     def updateDatabase(self):
         if(self.con):
-            cursor = self.con.cursor()
             freqDict = self.freqStem()
             freqList = []
             for key in freqDict.keys():
-                escapedKey = key.replace("'", "\\'") 
+                escapedKey = key.replace("'", "\\'")
                 if self.debugLevel > 1:
                     print("Adding " + " key = " + key + " escapedKey = " + escapedKey + " with freq " + str(freqDict[key]))
-                cursor.execute("INSERT INTO Stem(name, freq) VALUES('%s', %d)" % (escapedKey, freqDict[key]))
+                self.cursor.execute("INSERT INTO Stem(name, freq) VALUES('%s', %d)" % (escapedKey, freqDict[key]))
                 self.con.commit()
-            cursor.close()
-    
+
 
 def main():
     documentsData = {}
@@ -131,23 +195,27 @@ def main():
         dbDatabase = sys.argv[3]
         con = mysql.connector.connect(user = dbUser, password = dbPassword,
                                       host = 'localhost', database = dbDatabase)
-    
+
     tokenizer = CS157ATokenizer(debugLevel = 0, con = con);
-    
+
+    if con:
+        # if we have database create tables
+        tokenizer.recreateTable()
+
     for dataFile in dataFilesPath:
         #print("Processing " + dataFile + "...")
         tokenizer.parseText(dataFile)
     #print(tokenizer.documentOrder)
     if con:
         # if we have database connection put the data in
-        tokenizer.recreateTable()
         tokenizer.updateDatabase()
+        tokenizer.tfidfTableFill()
     else:
         # just print sorted list
         stemFreq = tokenizer.freqStemSorted()
         for stem in stemFreq:
             print("%40.40s %d" % (stem[1], stem[0]))
             #print(stemFreq)
-    
+
 
 main()
