@@ -1,8 +1,8 @@
 # cs157a-tokenizer
 Contributers:
-  Alexander Kamensky
-  Vivian Hoang
-  Tyler Veeman
+  Alexander Kamensky,
+  Vivian Hoang,
+  Tyler Veeman,
   Sean Chan
 
 
