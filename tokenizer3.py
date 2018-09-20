@@ -46,49 +46,49 @@ class CS157ATokenizer(object):
         for index, char in enumerate(text):
             asciiCode = int(ord(char))
             # This will not include non-printable characters
-            if (asciiCode > 31 and asciiCode != 127):
-                if(self.debugLevel > 2):
-                    print("index = " +  str(index) + " char = >" + char +  "< word = >" + word + "< whiteSpaceStack = " + str(whiteSpaceStack))
-                # Check if it is A-Z, a-z, 0-9, '-' , and '''
-                if(asciiCode == 39 or \
-                   asciiCode == 45 or \
-                   (asciiCode > 47 and asciiCode < 58) or \
-                   (asciiCode > 64 and asciiCode < 91) or \
-                   (asciiCode > 96 and asciiCode < 123) \
-                ):
-                    if not not whiteSpaceStack:
-                        whiteSpaceStack=[]
-                    word+=char
-                else:
-                    # If there's a space between words add to the whiteSpaceStack and add the word to the array
-                    if(asciiCode == 32):
-                        if(not whiteSpaceStack and word):
-                            word = word.lower()
-                            word = ps.stem(word)
-                            self.documentOrder.append(word)
-                            self.updateWords(word, self.curDocID)
+            # if (asciiCode > 31 and asciiCode != 127):
+            if(self.debugLevel > 2):
+                print("index = " +  str(index) + " char = >" + char +  "< word = >" + word + "< whiteSpaceStack = " + str(whiteSpaceStack))
+            # Check if it is A-Z, a-z, 0-9, '-' , and '''
+            if(asciiCode == 39 or \
+               asciiCode == 45 or \
+               (asciiCode > 47 and asciiCode < 58) or \
+               (asciiCode > 64 and asciiCode < 91) or \
+               (asciiCode > 96 and asciiCode < 123) \
+            ):
+                if not not whiteSpaceStack:
+                    whiteSpaceStack=[]
+                word+=char
+            else:
+                # If there's a space between words add to the whiteSpaceStack and add the word to the array
+                if(asciiCode == 32):
+                    if(not whiteSpaceStack and word):
+                        word = word.lower()
+                        word = ps.stem(word)
+                        self.documentOrder.append(word)
+                        self.updateWords(word, self.curDocID)
 
-                            if(self.debugLevel > 0):
-                                print("Adding 1 >" + word + "<")
-                            word=""
-                        whiteSpaceStack.append(char)
-                    # If it's a different symbol, it will be added as a token instead
-                    else:
-                        if(word):
-                            word = word.lower()
-                            word = ps.stem(word)
-                            if(self.debugLevel > 0):
-                                print("Adding 2 >" + word + "<")
-
-                            self.documentOrder.append(word)
-                            self.updateWords(word, self.curDocID)
-
-                        if(self.debugLevel >0):
-                            print("Adding 3 >" + char + "<")
-                        word1 = ps.stem(char)
-                        self.documentOrder.append(word1)
-                        self.updateWords(word1, self.curDocID)
+                        if(self.debugLevel > 0):
+                            print("Adding 1 >" + word + "<")
                         word=""
+                    whiteSpaceStack.append(char)
+                # If it's a different symbol, it will be added as a token instead
+                else:
+                    if(word):
+                        word = word.lower()
+                        word = ps.stem(word)
+                        if(self.debugLevel > 0):
+                            print("Adding 2 >" + word + "<")
+
+                        self.documentOrder.append(word)
+                        self.updateWords(word, self.curDocID)
+
+                    if(self.debugLevel >0):
+                        print("Adding 3 >" + char + "<")
+                    word1 = ps.stem(char)
+                    self.documentOrder.append(word1)
+                    self.updateWords(word1, self.curDocID)
+                    word=""
 
         if(not not word):
             self.documentOrder.append(ps.stem(word))
