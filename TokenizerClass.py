@@ -1,4 +1,4 @@
-from nltk.stem import PorterStemmer
+from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from openpyxl import Workbook
@@ -291,7 +291,14 @@ class Tokenizer(object):
         self.data_excel_sheet.cell(row = count_row,column = 5, value="df")
         self.data_excel_sheet.cell(row = count_row,column = 6, value="tfidf")
         count_row = count_row + 1
-        for token,documents in enumerate(word_dict.values()):
+
+        sorted_word_dict = {}
+        for k in sorted(word_dict):
+            test = "%s" % k
+            if test.replace("'", "").isalpha():
+                sorted_word_dict[k] = word_dict[k]
+
+        for token,documents in sorted_word_dict.items():
             for key,val in documents[0].items():
                 # print("Token: " +str(token) + " Value: "+ str(val))
                 document_ID = key
