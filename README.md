@@ -1,4 +1,4 @@
-# cs157a-tokenizer
+# Tokenizer Clustering
 
 We will be using the TokenizerClass.py.
 
