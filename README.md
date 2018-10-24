@@ -12,9 +12,9 @@ Then, you will need to download the repository to your local environment.
 
 ### Installing
 
-You will need to install the python libraries in your command line, prompt, or bash. You can read more about installing in the following links:
-https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/
-https://openpyxl.readthedocs.io/en/stable/
+You will need to install the python libraries in your command line, prompt, or bash. You can read more about installing in the following links:   
+https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/    
+https://openpyxl.readthedocs.io/en/stable/    
 
 ```
 $ pip install ntlk
