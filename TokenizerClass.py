@@ -1,10 +1,14 @@
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from nltk.stem.porter import *
 from openpyxl import Workbook
+import mysql.connector
 import os
 import sys
 import math
+import time
+
 
 
 
@@ -42,10 +46,15 @@ class Tokenizer(object):
         '''
         self.__tokenized_words = {}
         self.__key_words = {}
+        self.__tokenized_stemmed_words = {}
         self.__variation_of_stem_forms = {}
         self.data_excel_sheet = excel_sheet
         self.__file_paths = file_paths
         self.__total_num_of_doc = len(file_paths)
+
+        self.__dbUser = "root"
+        self.__dbPassword = ""
+        self.__dbDatabase = "db_stem"
 
 
 
@@ -56,24 +65,22 @@ class Tokenizer(object):
         # This will collect all of the TF first
         for docID,path in enumerate(self.__file_paths):
             # print("Current path is: " + path)
-            tokenized_text = self.start_tokenizing_document(path)
-            self.store_data_into_dict(tokenized_text, docID, self.__tokenized_words)
+            # tokenized_text = self.start_tokenizing_document(path)
+            tokenized_stemmed_words = self.start_stemming_document(path)
+            # self.store_data_into_dict(tokenized_text, docID, self.__tokenized_words)
+            # self.store_data_into_dict(tokenized_stemmed_words, docID, self.__tokenized_words)
+            self.store_data_into_dict(tokenized_stemmed_words, docID, self.__tokenized_stemmed_words)
 
         # This will collect DF and TFiDF
-        for token_value in self.__tokenized_words.values():
+        for token_value in self.__tokenized_stemmed_words.values():
             num_of_doc_with_token = len(token_value[0])
             self.store_df_calc(token_value,self.__total_num_of_doc,num_of_doc_with_token)
             self.store_tfidf_calc(token_value)
-        self.__store_data_into_excel(self.__tokenized_words)
+        # self.__store_data_into_excel(self.__tokenized_words)
+        self.__store_data_into_db(self.__tokenized_stemmed_words)
+        self.__store_data_into_excel(self.__tokenized_stemmed_words)
 
         
-
-
-
-    
-
-
-
 
 
 
@@ -88,9 +95,12 @@ class Tokenizer(object):
             Return:
                 (List): an array of tokenized words
         '''
+        ps = PorterStemmer()
         with open(file_path_of_doc,"r",encoding="UTF-8",errors='ignore') as document:
             text = document.read()
-        return word_tokenize(text)
+        tokenized_text = word_tokenize(text)
+        stemmed_tokenized_text = [ps.stem(words) for words in tokenized_text]
+        return stemmed_tokenized_text
     
 
 
@@ -316,6 +326,100 @@ class Tokenizer(object):
 
 
 
+
+
+
+
+    def __store_data_into_db(self,word_dict={}):
+        '''
+            Stores value into database
+
+            Parameters:
+                word_dict (Dictionary): the data of all the correctly formatted as shown in init
+        '''
+        mydb = mysql.connector.connect(
+                                     user = self.__dbUser,
+                                     password = self.__dbPassword,
+                                     host = 'localhost')
+        mycursor = mydb.cursor()
+        self.recreateTable(mycursor,mydb)
+        mycursor.close()
+        mydb.close()
+   
+        mydb = mysql.connector.connect(
+                                     user = self.__dbUser,
+                                     password = self.__dbPassword,
+                                     host = 'localhost',
+                                     database = self.__dbDatabase)
+        mycursor = mydb.cursor()
+
+        past_millis = int(round(time.time() * 1000))
+        
+        for token,documents in word_dict.items():
+            for key,val in documents[0].items():
+                document_ID = key
+                token_Position = val[0]
+                tf = val[1]
+                df = documents[1]
+                tfidf = val[2]
+                self.updateDatabase(mycursor,mydb, token, document_ID,tf,df,tfidf)
+        mycursor.close()
+        mydb.close()
+        current_millis = int(round(time.time() * 1000))
+        result = current_millis-past_millis
+        print("Milliseconds: "+ str(result))
+
+
+
+    def recreateTable(self,cursor,mydb):
+        '''
+            Recreates database and table if it doesn't exist
+
+            Parameters:
+                cursor (DB cursor Object): The database cursor to query and execute commands
+                mydb (MySQL Object): the database connection object
+        '''
+        try:
+            cursor.execute("DROP DATABASE db_stem")
+            mydb.commit()
+        except:
+            pass
+        cursor.execute("CREATE DATABASE IF NOT EXISTS db_stem")
+        mydb.commit()
+
+        cursor.close()
+        mydb.close()
+        mydb = mysql.connector.connect(
+                                     user = self.__dbUser,
+                                     password = self.__dbPassword,
+                                     host = 'localhost',
+                                     database=self.__dbDatabase)
+        cursor = mydb.cursor()
+
+        try:
+            cursor.execute("DROP TABLE stem_data")
+            mydb.commit()
+        except:
+            pass
+        cursor.execute("CREATE TABLE stem_data(token VARCHAR(60), doc_ID INT NOT NULL,tf DECIMAL NOT NULL, df DECIMAL NOT NULL, tfidf DECIMAL NOT NULL)")
+        mydb.commit()
+
+
+
+
+    def updateDatabase(self,cursor,mydb, token, document_ID,tf,df,tfidf):
+        '''
+            Insert values into tables
+
+            Parameters:
+                cursor (DB cursor Object): The database cursor to query and execute commands
+                mydb (MySQL Object): the database connection object
+                token, document_ID, tf, df, tfidf: The values from the dictionary
+        '''
+        sql="INSERT INTO stem_data (token, doc_ID, tf, df,tfidf) VALUES (%s,%s,%s,%s,%s)"
+        value = (token,document_ID,tf,df,tfidf)
+        cursor.execute(sql,value) 
+        mydb.commit() 
 
 
 
