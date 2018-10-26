@@ -9,12 +9,18 @@ Go install Python 3 here: https://www.python.org/downloads/
 
 Then, you will need to download the repository to your local environment. 
 
+XAMPP will be required, or some way to connect to your localhost database. We will be looking at  
+``localhost/phpymyadmin```
+
+
+
 
 ### Installing
 
 You will need to install the python libraries in your command line, prompt, or bash. You can read more about installing in the following links:   
 https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/    
-https://openpyxl.readthedocs.io/en/stable/    
+https://openpyxl.readthedocs.io/en/stable/   
+https://dev.mysql.com/downloads/connector/python/2.0.html
 
 ```
 $ pip install ntlk
