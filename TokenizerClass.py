@@ -64,8 +64,6 @@ class Tokenizer(object):
     def run(self):
         # This will collect all of the TF first
         for docID,path in enumerate(self.__file_paths):
-            # print("Current path is: " + path)
-            # tokenized_text = self.start_tokenizing_document(path)
             tokenized_stemmed_words = self.start_stemming_document(path)
             # self.store_data_into_dict(tokenized_text, docID, self.__tokenized_words)
             # self.store_data_into_dict(tokenized_stemmed_words, docID, self.__tokenized_words)
@@ -401,7 +399,7 @@ class Tokenizer(object):
             mydb.commit()
         except:
             pass
-        cursor.execute("CREATE TABLE stem_data(token VARCHAR(60), doc_ID INT NOT NULL,tf DECIMAL NOT NULL, df DECIMAL NOT NULL, tfidf DECIMAL NOT NULL)")
+        cursor.execute("CREATE TABLE stem_data(token VARCHAR(60), doc_ID INT NOT NULL,tf DECIMAL(11,10) NOT NULL, df DECIMAL(11,10) NOT NULL, tfidf DECIMAL(11,10) NOT NULL)")
         mydb.commit()
 
 
@@ -457,7 +455,6 @@ def main():
 
     tokenizer1 = Tokenizer(data_Files_Path,data_excel_sheet)
     tokenizer1.run()
-    # tokenizer1.print_data()
     wb.save('Tokenizer_data.xlsx')
 
 main()
