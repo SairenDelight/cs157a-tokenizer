@@ -55,6 +55,7 @@ class Tokenizer(object):
         self.__dbUser = "root"
         self.__dbPassword = ""
         self.__dbDatabase = "db_stem"
+        self.__dbHost = "localhost"
 
 
 
@@ -338,7 +339,7 @@ class Tokenizer(object):
         mydb = mysql.connector.connect(
                                      user = self.__dbUser,
                                      password = self.__dbPassword,
-                                     host = 'localhost')
+                                     host = self.__dbHost)
         mycursor = mydb.cursor()
         self.recreateTable(mycursor,mydb)
         mycursor.close()
@@ -347,7 +348,7 @@ class Tokenizer(object):
         mydb = mysql.connector.connect(
                                      user = self.__dbUser,
                                      password = self.__dbPassword,
-                                     host = 'localhost',
+                                     host = self.__dbHost,
                                      database = self.__dbDatabase)
         mycursor = mydb.cursor()
 
@@ -361,6 +362,18 @@ class Tokenizer(object):
                 df = documents[1]
                 tfidf = val[2]
                 self.updateDatabase(mycursor,mydb, token, document_ID,tf,df,tfidf)
+
+        mycursor.execute("SELECT token, tfidf FROM stem_data ORDER BY tfidf DESC")
+        row = mycursor.fetchone()
+        previous = 0
+        while row is not None:
+            if previous == 0:
+                print("Token: " + row[0] + ", Gap: 0")
+            else:
+                print("Token: " + row[0] + ", Gap: " + str((previous - row[1])))
+            previous = row[1]
+            row = mycursor.fetchone()
+
         mycursor.close()
         mydb.close()
         current_millis = int(round(time.time() * 1000))
@@ -390,7 +403,7 @@ class Tokenizer(object):
         mydb = mysql.connector.connect(
                                      user = self.__dbUser,
                                      password = self.__dbPassword,
-                                     host = 'localhost',
+                                     host = self.__dbHost,
                                      database=self.__dbDatabase)
         cursor = mydb.cursor()
 
@@ -414,7 +427,7 @@ class Tokenizer(object):
                 mydb (MySQL Object): the database connection object
                 token, document_ID, tf, df, tfidf: The values from the dictionary
         '''
-        sql="INSERT INTO stem_data (token, doc_ID, tf, df,tfidf) VALUES (%s,%s,%s,%s,%s)"
+        sql="INSERT INTO stem_data (token, doc_ID, tf, df, tfidf) VALUES (%s,%s,%s,%s,%s)"
         value = (token,document_ID,tf,df,tfidf)
         cursor.execute(sql,value) 
         mydb.commit() 
