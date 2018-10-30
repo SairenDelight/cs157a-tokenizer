@@ -11,7 +11,6 @@ import time
 
 
 
-
 def getDirectoryOfData():
     '''
         This function will get the 'data' directory of current folder
@@ -349,7 +348,7 @@ class Tokenizer(object):
                                      password = self.__dbPassword,
                                      host = 'localhost',
                                      database = self.__dbDatabase)
-        mycursor = mydb.cursor()
+        mycursor = mydb.cursor(buffered=True)
 
         past_millis = int(round(time.time() * 1000))
         
@@ -382,7 +381,7 @@ class Tokenizer(object):
             mydb.commit()
         except:
             pass
-        cursor.execute("CREATE DATABASE IF NOT EXISTS db_stem")
+        cursor.execute("CREATE DATABASE IF NOT EXISTS db_stem CHARACTER SET utf8 COLLATE utf8_unicode_ci")
         mydb.commit()
 
         cursor.close()
@@ -395,11 +394,13 @@ class Tokenizer(object):
         cursor = mydb.cursor()
 
         try:
-            cursor.execute("DROP TABLE stem_data")
+            cursor.execute("DROP TABLE np_stem_data_t1")
+            cursor.execute("DROP TABLE np_stem_data_t2")
             mydb.commit()
         except:
             pass
-        cursor.execute("CREATE TABLE stem_data(token VARCHAR(60), doc_ID INT NOT NULL,tf DECIMAL(11,10) NOT NULL, df DECIMAL(11,10) NOT NULL, tfidf DECIMAL(11,10) NOT NULL)")
+        cursor.execute("CREATE TABLE np_stem_data_t1(token VARCHAR(60), df DECIMAL(11,10) NOT NULL, PRIMARY KEY (token)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci")
+        cursor.execute("CREATE TABLE np_stem_data_t2(token VARCHAR(60), doc_ID INT NOT NULL,tf DECIMAL(11,10) NOT NULL, tfidf DECIMAL(11,10) NOT NULL, FOREIGN KEY (token) REFERENCES np_stem_data_t1(token)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci")
         mydb.commit()
 
 
@@ -414,9 +415,19 @@ class Tokenizer(object):
                 mydb (MySQL Object): the database connection object
                 token, document_ID, tf, df, tfidf: The values from the dictionary
         '''
-        sql="INSERT INTO stem_data (token, doc_ID, tf, df,tfidf) VALUES (%s,%s,%s,%s,%s)"
-        value = (token,document_ID,tf,df,tfidf)
+        esc_token = token.replace("'","''")
+        # print(token)
+        check_data = "SELECT (1) FROM np_stem_data_t1 WHERE token ='%s' limit 1" % (esc_token)
+        cursor.execute(check_data)
+        results = cursor.fetchone()
+        if not results:
+            sql="INSERT INTO np_stem_data_t1(token, df) VALUES (%s,%s)"
+            value = (token,df)
+            cursor.execute(sql,value) 
+        sql="INSERT INTO np_stem_data_t2(token, doc_ID,tf, tfidf) VALUES (%s,%s,%s,%s)"
+        value = (token,document_ID,tf,tfidf)
         cursor.execute(sql,value) 
+        check_data = "SELECT token,df FROM np_stem_data_t1 WHERE token = '%s'" % (esc_token)
         mydb.commit() 
 
 
