@@ -2,6 +2,9 @@
 
 We will be using the TokenizerClass.py.
 
+## Summary
+We have implemented the store methods into database and excel and dictionary, calculation of (tf, df, tfidf), and maximum gap calculation.
+
 ## Getting Started
 
 First, you will need Python installed onto your computer. 
