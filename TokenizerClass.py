@@ -11,7 +11,6 @@ import time
 
 
 
-
 def getDirectoryOfData():
     '''
         This function will get the 'data' directory of current folder
@@ -55,6 +54,7 @@ class Tokenizer(object):
         self.__dbUser = "root"
         self.__dbPassword = ""
         self.__dbDatabase = "db_stem"
+        self.max_gap = 0
         self.__dbHost = "localhost"
 
 
@@ -78,6 +78,7 @@ class Tokenizer(object):
         # self.__store_data_into_excel(self.__tokenized_words)
         self.__store_data_into_db(self.__tokenized_stemmed_words)
         self.__store_data_into_excel(self.__tokenized_stemmed_words)
+        self.__calculate_max_gap()
 
         
 
@@ -350,7 +351,7 @@ class Tokenizer(object):
                                      password = self.__dbPassword,
                                      host = self.__dbHost,
                                      database = self.__dbDatabase)
-        mycursor = mydb.cursor()
+        mycursor = mydb.cursor(buffered=True)
 
         past_millis = int(round(time.time() * 1000))
         
@@ -395,25 +396,34 @@ class Tokenizer(object):
             mydb.commit()
         except:
             pass
-        cursor.execute("CREATE DATABASE IF NOT EXISTS db_stem")
-        mydb.commit()
-
-        cursor.close()
-        mydb.close()
-        mydb = mysql.connector.connect(
-                                     user = self.__dbUser,
-                                     password = self.__dbPassword,
-                                     host = self.__dbHost,
-                                     database=self.__dbDatabase)
-        cursor = mydb.cursor()
-
         try:
-            cursor.execute("DROP TABLE stem_data")
+            cursor.execute("CREATE DATABASE IF NOT EXISTS db_stem CHARACTER SET utf8 COLLATE utf8_unicode_ci")
             mydb.commit()
         except:
             pass
-        cursor.execute("CREATE TABLE stem_data(token VARCHAR(60), doc_ID INT NOT NULL,tf DECIMAL(11,10) NOT NULL, df DECIMAL(11,10) NOT NULL, tfidf DECIMAL(11,10) NOT NULL)")
-        mydb.commit()
+        cursor.close()
+        mydb.close()
+        try:
+            mydb = mysql.connector.connect(
+                                        user = self.__dbUser,
+                                        password = self.__dbPassword,
+                                        host = self.__dbHost,
+                                        database=self.__dbDatabase)
+            cursor = mydb.cursor()
+        except:
+            print("Connection failed to login")
+        try:
+            cursor.execute("DROP TABLE np_stem_data_t1")
+            cursor.execute("DROP TABLE np_stem_data_t2")
+            mydb.commit()
+        except:
+            print("Query has failed to drop the table")
+        try:
+            cursor.execute("CREATE TABLE np_stem_data_t1(token VARCHAR(60), df DECIMAL(11,10) NOT NULL, PRIMARY KEY (token)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci")
+            cursor.execute("CREATE TABLE np_stem_data_t2(token VARCHAR(60), doc_ID INT NOT NULL,tf DECIMAL(11,10) NOT NULL, tfidf DECIMAL(11,10) NOT NULL, FOREIGN KEY (token) REFERENCES np_stem_data_t1(token)) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci")
+            mydb.commit()
+        except:
+            print("Query has failed to create the table")
 
 
 
@@ -427,9 +437,19 @@ class Tokenizer(object):
                 mydb (MySQL Object): the database connection object
                 token, document_ID, tf, df, tfidf: The values from the dictionary
         '''
-        sql="INSERT INTO stem_data (token, doc_ID, tf, df, tfidf) VALUES (%s,%s,%s,%s,%s)"
-        value = (token,document_ID,tf,df,tfidf)
+        esc_token = token.replace("'","''")
+        # print(token)
+        check_data = "SELECT (1) FROM np_stem_data_t1 WHERE token ='%s' limit 1" % (esc_token)
+        cursor.execute(check_data)
+        results = cursor.fetchone()
+        if not results:
+            sql="INSERT INTO np_stem_data_t1(token, df) VALUES (%s,%s)"
+            value = (token,df)
+            cursor.execute(sql,value) 
+        sql="INSERT INTO np_stem_data_t2(token, doc_ID,tf, tfidf) VALUES (%s,%s,%s,%s)"
+        value = (token,document_ID,tf,tfidf)
         cursor.execute(sql,value) 
+        check_data = "SELECT token,df FROM np_stem_data_t1 WHERE token = '%s'" % (esc_token)
         mydb.commit() 
 
 
@@ -453,6 +473,56 @@ class Tokenizer(object):
 
 
 
+    def __calculate_max_gap(self):
+        '''
+            This will get the max gap for all the stemmed words in the documents
+        '''
+        try:
+            mydb = mysql.connector.connect(
+                                     user = self.__dbUser,
+                                     password = self.__dbPassword,
+                                     host = 'localhost',
+                                     database = self.__dbDatabase)
+            mycursor = mydb.cursor(buffered=True)
+        except:
+            print("Database connection has failed to connect")
+        try:
+            mycursor.execute("SELECT tfidf FROM np_stem_data_t2 ORDER BY tfidf ASC")
+            results = mycursor.fetchall()
+            previous = 0
+            for row in results:
+                if previous == 0:
+                    previous = row[0]
+                else:
+                    gap = abs(row[0] - previous)
+                    print("Gap: %.9f" % gap)
+                    if(self.max_gap < gap):
+                        self.max_gap = gap
+                        print("New max gap: %.9f" % gap)
+                    previous = row[0]
+
+        except:
+            print("Query tfidf has failed")
+        mycursor.close()
+        mydb.close()
+
+
+
+
+
+    def get_max_gap(self):
+        '''
+            This will get the max gap from the tfidf values, calculated
+            from __calculate_max_gap function
+
+            Return:
+                max_gap (Float): This will return the max gap value
+        '''
+        return self.max_gap
+
+    def run_gap(self):
+        self.__calculate_max_gap()
+
 
 
 
@@ -468,6 +538,8 @@ def main():
 
     tokenizer1 = Tokenizer(data_Files_Path,data_excel_sheet)
     tokenizer1.run()
+    result = tokenizer1.get_max_gap()
+    print("The Max Gap is : " + '{0:.11g}'.format(result))
     wb.save('Tokenizer_data.xlsx')
 
 main()
