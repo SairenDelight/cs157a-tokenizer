@@ -8,6 +8,7 @@ import os
 import sys
 import math
 import time
+import multiprocessing as mp
 
 
 
@@ -51,13 +52,11 @@ class Tokenizer(object):
         self.__file_paths = file_paths
         self.__total_num_of_doc = len(file_paths)
 
-        self.__dbUser = "root"
-        self.__dbPassword = ""
+        self.__dbUser = "tyler"
+        self.__dbPassword = "veeman"
         self.__dbDatabase = "db_stem"
         self.max_gap = 0
-        self.__dbHost = "localhost"
-
-
+        self.__dbHost = "10.12.139.255"
 
 
 
@@ -77,7 +76,7 @@ class Tokenizer(object):
             self.store_tfidf_calc(token_value)
         # self.__store_data_into_excel(self.__tokenized_words)
         self.__store_data_into_db(self.__tokenized_stemmed_words)
-        self.__store_data_into_excel(self.__tokenized_stemmed_words)
+        #self.__store_data_into_excel(self.__tokenized_stemmed_words)
         self.__calculate_max_gap()
 
         
@@ -342,19 +341,15 @@ class Tokenizer(object):
                                      password = self.__dbPassword,
                                      host = self.__dbHost)
         mycursor = mydb.cursor()
-        self.recreateTable(mycursor,mydb)
+        self.recreateTable(mycursor, mydb)
         mycursor.close()
         mydb.close()
-   
-        mydb = mysql.connector.connect(
-                                     user = self.__dbUser,
-                                     password = self.__dbPassword,
-                                     host = self.__dbHost,
-                                     database = self.__dbDatabase)
-        mycursor = mydb.cursor(buffered=True)
 
         past_millis = int(round(time.time() * 1000))
-        
+
+        pool = mp.Pool(mp.cpu_count())
+        tasks = []
+
         for token,documents in word_dict.items():
             for key,val in documents[0].items():
                 document_ID = key
@@ -362,21 +357,13 @@ class Tokenizer(object):
                 tf = val[1]
                 df = documents[1]
                 tfidf = val[2]
-                self.updateDatabase(mycursor,mydb, token, document_ID,tf,df,tfidf)
 
-        mycursor.execute("SELECT token, tfidf FROM stem_data ORDER BY tfidf DESC")
-        row = mycursor.fetchone()
-        previous = 0
-        while row is not None:
-            if previous == 0:
-                print("Token: " + row[0] + ", Gap: 0")
-            else:
-                print("Token: " + row[0] + ", Gap: " + str((previous - row[1])))
-            previous = row[1]
-            row = mycursor.fetchone()
+                tasks.append([token, document_ID, tf, df, tfidf])
 
-        mycursor.close()
-        mydb.close()
+        pool.map(self.updateDatabase, tasks)
+        pool.close()
+        pool.join()
+
         current_millis = int(round(time.time() * 1000))
         result = current_millis-past_millis
         print("Milliseconds: "+ str(result))
@@ -428,7 +415,7 @@ class Tokenizer(object):
 
 
 
-    def updateDatabase(self,cursor,mydb, token, document_ID,tf,df,tfidf):
+    def updateDatabase(self, args):
         '''
             Insert values into tables
 
@@ -437,8 +424,23 @@ class Tokenizer(object):
                 mydb (MySQL Object): the database connection object
                 token, document_ID, tf, df, tfidf: The values from the dictionary
         '''
+
+        mydb = mysql.connector.connect(
+            user=self.__dbUser,
+            password=self.__dbPassword,
+            host=self.__dbHost,
+            database=self.__dbDatabase)
+
+        cursor = mydb.cursor()
+        token = args[0]
+        document_ID = args[1]
+        tf = args[2]
+        df = args[3]
+        tfidf = args[4]
+
         esc_token = token.replace("'","''")
         # print(token)
+        #cursor.execute("LOCK TABLES np_stem_data_t1 WRITE")
         check_data = "SELECT (1) FROM np_stem_data_t1 WHERE token ='%s' limit 1" % (esc_token)
         cursor.execute(check_data)
         results = cursor.fetchone()
@@ -446,11 +448,17 @@ class Tokenizer(object):
             sql="INSERT INTO np_stem_data_t1(token, df) VALUES (%s,%s)"
             value = (token,df)
             cursor.execute(sql,value) 
+        #cursor.execute("UNLOCK TABLES")
+        #cursor.execute("LOCK TABLES np_stem_data_t2 WRITE")
         sql="INSERT INTO np_stem_data_t2(token, doc_ID,tf, tfidf) VALUES (%s,%s,%s,%s)"
         value = (token,document_ID,tf,tfidf)
-        cursor.execute(sql,value) 
+        cursor.execute(sql,value)
+        #cursor.execute("UNLOCK TABLES")
         check_data = "SELECT token,df FROM np_stem_data_t1 WHERE token = '%s'" % (esc_token)
-        mydb.commit() 
+        mydb.commit()
+        cursor.close()
+        mydb.close()
+
 
 
 
@@ -481,7 +489,7 @@ class Tokenizer(object):
             mydb = mysql.connector.connect(
                                      user = self.__dbUser,
                                      password = self.__dbPassword,
-                                     host = 'localhost',
+                                     host = self.__dbHost,
                                      database = self.__dbDatabase)
             mycursor = mydb.cursor(buffered=True)
         except:
