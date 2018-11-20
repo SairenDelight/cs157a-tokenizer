@@ -1,0 +1,4 @@
+Cross-sale association rules generated from distinct customers belong to this case In general, it is inappropriate to directly combine association cubes that cover areas a 1 205, a k to cover a larger area a In the given example, this is because association cubes record counts of customers that satisfy   customer product merchant time area Doe TV Dept Store 98Q1 California Doe VCR Dept Store 98Q1 California customer product merchant time area Doe VCR Sears 5-Feb-98 San Francisco Joe PC OfficeMax 7-Feb-98 San Francisco customer product merchant time area Doe TV Fry's 3-Jan-98 San Jose Smith Radio Kmart 14-Jan-98 San Jose Association   population      base          confidence      support cube               cube                cube         cube                cube LDOS LDOS GDOS 
+
+
+the association condition, and the sets of customers contained in a 1 205, a k are not mutually disjoint.

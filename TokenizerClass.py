@@ -26,9 +26,9 @@ def getDirectoryOfData():
 class Tokenizer(object):
     '''
         This class will store all the data into a spreadsheet
-        instead of a console or database. 
+        instead of a console or database.
     '''
-    
+
     def __init__(self,file_paths,excel_sheet):
         '''
             This initializes the Tokenizer Class
@@ -39,7 +39,7 @@ class Tokenizer(object):
             __variation_of_stem_forms {} format:
                 { 'Stem Word' : [Variation1, Variation2, Variation3...] }
 
-            
+
             Parameters:
                 file_paths (String): Array of document path
                 excel_sheet (Workbook): Spreadsheet to input data
@@ -79,7 +79,7 @@ class Tokenizer(object):
         #self.__store_data_into_excel(self.__tokenized_stemmed_words)
         self.__calculate_max_gap()
 
-        
+
 
 
 
@@ -90,7 +90,7 @@ class Tokenizer(object):
 
             Parameters:
                 file_path (String): the current document path to perform stem operation
-            
+
             Return:
                 (List): an array of tokenized words
         '''
@@ -100,7 +100,7 @@ class Tokenizer(object):
         tokenized_text = word_tokenize(text)
         stemmed_tokenized_text = [ps.stem(words) for words in tokenized_text]
         return stemmed_tokenized_text
-    
+
 
 
 
@@ -112,14 +112,13 @@ class Tokenizer(object):
 
             Parameters:
                 file_path (String): the current document path to perform stem operation
-            
+
             Return:
                 (List): an array of tokenized words
         '''
         with open(file_path_of_doc,"r") as document:
             text = document.read()
         return word_tokenize(text)
-        
 
 
 
@@ -153,11 +152,11 @@ class Tokenizer(object):
             for currentDoc in doc[0].values():
                 if len(currentDoc) != 2:
                     self.store_tf_calc(currentDoc,current_doc_word_count)
-                else: 
+                else:
                     continue
         return word_dict
 
-    
+
 
 
 
@@ -245,7 +244,7 @@ class Tokenizer(object):
                 (int) : Token Frequency Calculation
         '''
         return total_tokens/document_word_count
-        
+
 
 
 
@@ -258,13 +257,13 @@ class Tokenizer(object):
                 total_num_of_doc (int): the total amount of documents
 
                 num_of_doc_with_tokens (int): the total documents containing the token
-            
+
             Return:
                 (int) : Document frequency calculation
         '''
         return math.log(total_num_of_doc/num_of_doc_with_token) * 1.0
 
-    
+
 
 
 
@@ -273,7 +272,7 @@ class Tokenizer(object):
             Calculates the TFiDF to find key words
 
             Parameters:
-                tf_value (int): Token frequency 
+                tf_value (int): Token frequency
                 df_value (int): Document Frequency
 
             Return:
@@ -447,7 +446,7 @@ class Tokenizer(object):
         if not results:
             sql="INSERT INTO np_stem_data_t1(token, df) VALUES (%s,%s)"
             value = (token,df)
-            cursor.execute(sql,value) 
+            cursor.execute(sql,value)
         #cursor.execute("UNLOCK TABLES")
         #cursor.execute("LOCK TABLES np_stem_data_t2 WRITE")
         sql="INSERT INTO np_stem_data_t2(token, doc_ID,tf, tfidf) VALUES (%s,%s,%s,%s)"

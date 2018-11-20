@@ -1,0 +1,1 @@
+In this paper we did not discuss privacy control in customer profiling However, we did address this issue in our design by incorporating support for the P3P protocol [1 i n  ou r data warehouse.

@@ -1,0 +1,1 @@
+Functional Association Rules A multidimensional association rule is functional if its predicates include variables, and the variables in the consequent are functions of those in the antecedent.

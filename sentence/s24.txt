@@ -1,0 +1,1 @@
+This can be seen in the following examples 214  A customer who bought A and B in both San Jose and San Francisco which are covered by different LDOSs , contributes a count to the rule covering each city, but has only one count, not two, for the rule A  336  B covering California 214  A customer \(e.g.
