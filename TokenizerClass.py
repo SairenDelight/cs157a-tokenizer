@@ -25,9 +25,9 @@ def getDirectoryOfData():
 class Tokenizer(object):
     '''
         This class will store all the data into a spreadsheet
-        instead of a console or database. 
+        instead of a console or database.
     '''
-    
+
     def __init__(self,file_paths,excel_sheet):
         '''
             This initializes the Tokenizer Class
@@ -38,7 +38,7 @@ class Tokenizer(object):
             __variation_of_stem_forms {} format:
                 { 'Stem Word' : [Variation1, Variation2, Variation3...] }
 
-            
+
             Parameters:
                 file_paths (String): Array of document path
                 excel_sheet (Workbook): Spreadsheet to input data
@@ -80,7 +80,7 @@ class Tokenizer(object):
         self.__store_data_into_excel(self.__tokenized_stemmed_words)
         self.__calculate_max_gap()
 
-        
+
 
 
 
@@ -91,7 +91,7 @@ class Tokenizer(object):
 
             Parameters:
                 file_path (String): the current document path to perform stem operation
-            
+
             Return:
                 (List): an array of tokenized words
         '''
@@ -101,7 +101,7 @@ class Tokenizer(object):
         tokenized_text = word_tokenize(text)
         stemmed_tokenized_text = [ps.stem(words) for words in tokenized_text]
         return stemmed_tokenized_text
-    
+
 
 
 
@@ -113,14 +113,14 @@ class Tokenizer(object):
 
             Parameters:
                 file_path (String): the current document path to perform stem operation
-            
+
             Return:
                 (List): an array of tokenized words
         '''
         with open(file_path_of_doc,"r") as document:
             text = document.read()
         return word_tokenize(text)
-        
+
 
 
 
@@ -154,11 +154,11 @@ class Tokenizer(object):
             for currentDoc in doc[0].values():
                 if len(currentDoc) != 2:
                     self.store_tf_calc(currentDoc,current_doc_word_count)
-                else: 
+                else:
                     continue
         return word_dict
 
-    
+
 
 
 
@@ -246,7 +246,7 @@ class Tokenizer(object):
                 (int) : Token Frequency Calculation
         '''
         return total_tokens/document_word_count
-        
+
 
 
 
@@ -259,13 +259,13 @@ class Tokenizer(object):
                 total_num_of_doc (int): the total amount of documents
 
                 num_of_doc_with_tokens (int): the total documents containing the token
-            
+
             Return:
                 (int) : Document frequency calculation
         '''
         return math.log(total_num_of_doc/num_of_doc_with_token) * 1.0
 
-    
+
 
 
 
@@ -274,7 +274,7 @@ class Tokenizer(object):
             Calculates the TFiDF to find key words
 
             Parameters:
-                tf_value (int): Token frequency 
+                tf_value (int): Token frequency
                 df_value (int): Document Frequency
 
             Return:
@@ -345,7 +345,7 @@ class Tokenizer(object):
         self.recreateTable(mycursor,mydb)
         mycursor.close()
         mydb.close()
-   
+
         mydb = mysql.connector.connect(
                                      user = self.__dbUser,
                                      password = self.__dbPassword,
@@ -354,7 +354,7 @@ class Tokenizer(object):
         mycursor = mydb.cursor(buffered=True)
 
         past_millis = int(round(time.time() * 1000))
-        
+
         for token,documents in word_dict.items():
             for key,val in documents[0].items():
                 document_ID = key
@@ -363,17 +363,17 @@ class Tokenizer(object):
                 df = documents[1]
                 tfidf = val[2]
                 self.updateDatabase(mycursor,mydb, token, document_ID,tf,df,tfidf)
-
-        mycursor.execute("SELECT token, tfidf FROM stem_data ORDER BY tfidf DESC")
-        row = mycursor.fetchone()
-        previous = 0
-        while row is not None:
-            if previous == 0:
-                print("Token: " + row[0] + ", Gap: 0")
-            else:
-                print("Token: " + row[0] + ", Gap: " + str((previous - row[1])))
-            previous = row[1]
-            row = mycursor.fetchone()
+        #
+        # mycursor.execute("SELECT token, tfidf FROM stem_data ORDER BY tfidf DESC")
+        # row = mycursor.fetchone()
+        # previous = 0
+        # while row is not None:
+        #     if previous == 0:
+        #         print("Token: " + row[0] + ", Gap: 0")
+        #     else:
+        #         print("Token: " + row[0] + ", Gap: " + str((previous - row[1])))
+        #     previous = row[1]
+        #     row = mycursor.fetchone()
 
         mycursor.close()
         mydb.close()
@@ -445,12 +445,12 @@ class Tokenizer(object):
         if not results:
             sql="INSERT INTO np_stem_data_t1(token, df) VALUES (%s,%s)"
             value = (token,df)
-            cursor.execute(sql,value) 
+            cursor.execute(sql,value)
         sql="INSERT INTO np_stem_data_t2(token, doc_ID,tf, tfidf) VALUES (%s,%s,%s,%s)"
         value = (token,document_ID,tf,tfidf)
-        cursor.execute(sql,value) 
+        cursor.execute(sql,value)
         check_data = "SELECT token,df FROM np_stem_data_t1 WHERE token = '%s'" % (esc_token)
-        mydb.commit() 
+        mydb.commit()
 
 
 
