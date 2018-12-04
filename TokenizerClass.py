@@ -21,6 +21,11 @@ def getDirectoryOfData():
     filesPath = []
     for files in dataFiles:
         filesPath.append(dataDir+"/"+files)
+    dataDir = os.path.realpath('.') + '/sentence'
+    dataFiles = os.listdir(dataDir)
+    for files in dataFiles:
+        filesPath.append(dataDir+"/"+files)
+    # print(filesPath)
     return filesPath
 
 class Tokenizer(object):
@@ -48,6 +53,7 @@ class Tokenizer(object):
         self.__key_words = {}
         self.__tokenized_stemmed_words = {}
         self.__variation_of_stem_forms = {}
+        self.__tfidf = []
         self.data_excel_sheet = excel_sheet
         self.__file_paths = file_paths
         self.__total_num_of_doc = len(file_paths)
@@ -63,7 +69,11 @@ class Tokenizer(object):
 
 
 
+
     def run(self):
+        '''
+            This runs the tokenizer
+        '''
         # This will collect all of the TF first
         for docID,path in enumerate(self.__file_paths):
             tokenized_stemmed_words = self.start_stemming_document(path)
@@ -78,12 +88,40 @@ class Tokenizer(object):
             self.store_tfidf_calc(token_value)
         # self.__store_data_into_excel(self.__tokenized_words)
         # self.__store_data_into_db(self.__tokenized_stemmed_words)
-        self.__store_data_into_excel(self.__tokenized_stemmed_words)
+        # self.__store_data_into_excel(self.__tokenized_stemmed_words)
         # self.__calculate_max_gap()
+        self.__calculate_max_gap_wo_db()
+        self.max_gap = self.max_gap/2
+        for token,values in self.__tokenized_stemmed_words.items():
+            for index,(key,value) in enumerate(values[0].items()):
+                if(value[2] >= self.max_gap and value[2] <= 0.09):
+                    self.__key_words[str(index)] = token
         for key,value in self.__tokenized_stemmed_words.items():
             print("Token: [" + str(key) + "] ||| Value: [" + str(value)+"]")
 
 
+    def getTFIDFList(self):
+        return self.__tfidf
+
+
+    def __calculate_max_gap_wo_db(self):
+        '''
+            Calculating the max gap without the database so it's faster
+        '''
+        for token,values in self.__tokenized_stemmed_words.items():
+            for key,value in values[0].items():
+                self.__tfidf.append(value[2])
+
+        previous = 0
+        print(self.__tfidf.sort())
+        for value in self.__tfidf:
+            if previous == 0:
+                previous = value
+            else:
+                gap = abs(value - previous)
+                if(self.max_gap < gap):
+                    self.max_gap = gap
+                previous = value
 
 
 
@@ -516,7 +554,7 @@ class Tokenizer(object):
                     previous = row[0]
 
         except:
-            print("Query tfidf has failed")
+            print("Query tfidf has failed to calculate max gap")
         mycursor.close()
         mydb.close()
 
@@ -552,8 +590,10 @@ def main():
 
     tokenizer1 = Tokenizer(data_Files_Path,data_excel_sheet)
     tokenizer1.run()
-    # result = tokenizer1.get_max_gap()
-    # print("The Max Gap is : " + '{0:.11g}'.format(result))
-    wb.save('Tokenizer_data.xlsx')
+    result = tokenizer1.get_max_gap()
+    print("The Max Gap is : " + '{0:.11g}'.format(result))
+    print(sorted(tokenizer1.get_key_words_data().values()))
+    # print(tokenizer1.getTFIDFList())
+    # wb.save('Tokenizer_data.xlsx')
 
 main()
