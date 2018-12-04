@@ -91,11 +91,13 @@ class Tokenizer(object):
         # self.__store_data_into_excel(self.__tokenized_stemmed_words)
         # self.__calculate_max_gap()
         self.__calculate_max_gap_wo_db()
+        estimate = self.max_gap - 0.01
         self.max_gap = self.max_gap/2
         for token,values in self.__tokenized_stemmed_words.items():
             for index,(key,value) in enumerate(values[0].items()):
-                if(value[2] >= self.max_gap and value[2] <= 0.09):
-                    self.__key_words[str(index)] = token
+                if(value[2] >= estimate and value[2] <= 0.09):
+                    if token not in self.__key_words.values():
+                        self.__key_words[str(index)] = token
         for key,value in self.__tokenized_stemmed_words.items():
             print("Token: [" + str(key) + "] ||| Value: [" + str(value)+"]")
 
