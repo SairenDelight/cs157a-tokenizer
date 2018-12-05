@@ -91,13 +91,10 @@ class Tokenizer(object):
         # self.__store_data_into_excel(self.__tokenized_stemmed_words)
         # self.__calculate_max_gap()
         self.__calculate_max_gap_wo_db()
-        estimate = self.max_gap - 0.01
-        self.max_gap = self.max_gap/2
         for token,values in self.__tokenized_stemmed_words.items():
             for index,(key,value) in enumerate(values[0].items()):
-                if(value[2] >= estimate and value[2] <= 0.09):
-                    if token not in self.__key_words.values():
-                        self.__key_words[str(index)] = token
+                if(value[2] >= self.max_gap and value[2] <= 0.2):
+                    self.__key_words[token] = 1
         for key,value in self.__tokenized_stemmed_words.items():
             print("Token: [" + str(key) + "] ||| Value: [" + str(value)+"]")
 
@@ -144,11 +141,11 @@ class Tokenizer(object):
         tokenized_text = word_tokenize(text)
         stemmed_tokenized_text = [ps.stem(words) for words in tokenized_text]
         bigrm = ngrams(tokenized_text,2)
-        trigrm = ngrams(tokenized_text,3)
-        fourgrm = ngrams(tokenized_text,4)
-        fivegrm = ngrams(tokenized_text,5)
-        fused_grm = list(bigrm)+list(trigrm)+list(fourgrm)+list(fivegrm)
-
+        # trigrm = ngrams(tokenized_text,3)
+        # fourgrm = ngrams(tokenized_text,4)
+        # fivegrm = ngrams(tokenized_text,5)
+        # fused_grm = list(bigrm)+list(trigrm)+list(fourgrm)+list(fivegrm)
+        fused_grm = list(bigrm)
         grm_list=[]
         for tuple in fused_grm:
             string = ' '.join(tuple)
@@ -594,7 +591,10 @@ def main():
     tokenizer1.run()
     result = tokenizer1.get_max_gap()
     print("The Max Gap is : " + '{0:.11g}'.format(result))
-    print(sorted(tokenizer1.get_key_words_data().values()))
+    sorted(tokenizer1.get_key_words_data().keys())
+    print("Keywords are : ")
+    for key in tokenizer1.get_key_words_data().keys():
+        print(key)
     # print(tokenizer1.getTFIDFList())
     # wb.save('Tokenizer_data.xlsx')
 
