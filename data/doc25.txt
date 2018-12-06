@@ -1,3 +1,0 @@
-select fname, lname
-from employee, dependent
-where ssn = depssn and fname = dependent_name;

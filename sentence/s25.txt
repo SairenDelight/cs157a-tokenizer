@@ -1,1 +1,0 @@
-Doe in Figure 3\who bought a TV in San Jose, but a VCR in San Francisco, is not countable for the cross-sale association rule TV  336 VCR covering any of these cities, but countable for the rule covering California.

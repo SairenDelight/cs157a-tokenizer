@@ -1,1 +1,0 @@
-At the GDOS, multiple association cubes, population cubes and base cubes sent from the LDOSs are simply combined, resulting in a summarized association cube and a summarized population cube, as 345   n i i a a C C 1   345   n i i p p C C 1  and 345   n i i b b C C 1  The corresponding confidence cube and support cube can then be derived as described earlier.

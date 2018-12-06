@@ -1,1 +1,0 @@
-ICDE'99, 1999 9  Sunita Sarawagi, Shiby Thomas, Rakesh Agrawal Integrating Association Rule Mining with Relational Database Systems: Alternatives and Implications", Proc ACM-SIGMOD'98, 1998   Hannu Toivonen, "Sampling Large Databases for Association Rules", 134-145, Proc.

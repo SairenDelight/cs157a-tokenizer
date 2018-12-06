@@ -93,7 +93,7 @@ class Tokenizer(object):
         self.__calculate_max_gap_wo_db()
         for token,values in self.__tokenized_stemmed_words.items():
             for index,(key,value) in enumerate(values[0].items()):
-                if(value[2] >= self.max_gap and value[2] <= 0.2):
+                if(value[2] >= self.max_gap):
                     self.__key_words[token] = 1
         for key,value in self.__tokenized_stemmed_words.items():
             print("Token: [" + str(key) + "] ||| Value: [" + str(value)+"]")

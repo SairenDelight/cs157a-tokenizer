@@ -1,2 +1,0 @@
-Get department # for each department which has average salary more than
-$30000.

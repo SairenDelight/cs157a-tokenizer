@@ -1,5 +1,0 @@
-select ssn, lname
-from employee e1
-where salary =(select max(salary)
- from employee e2
- where e1.dno = e2.dno);

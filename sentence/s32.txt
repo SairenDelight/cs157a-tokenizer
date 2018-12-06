@@ -1,1 +1,0 @@
-VLDB'96 1996 2  Surajit Chaudhuri and Umesh Dayal, \223An Overview of Data Warehousing and OLAP Technology\224, SIGMOD Record Vol \(26\ No \(1\ 1996 3  Qiming Chen, Umesh Dayal, Meichun Hsu 223 OLAPbased Scalable Profiling of Customer Behavior\224, Proc.

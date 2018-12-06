@@ -1,3 +1,0 @@
-Get the first & last names of all employees who work on the 'ProductZ' project
-over 5 hours per week.
-(> 1 solutions: in, exists, equal join)

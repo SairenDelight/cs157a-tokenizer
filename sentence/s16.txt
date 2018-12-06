@@ -1,1 +1,0 @@
-For example association rules on the month or year basis cannot be concluded from daily mining results.

@@ -1,1 +1,0 @@
-VLDB'96, 1996   Dick Tsur, Jeffrey D. Ullman, Serge Abiteboul, Chris Clifton, Rajeev Motwani, Svetlozar Nestorov, Arnon Rosenthal, "Query Flocks: A Generalization of Association-Rule Mining" Proc.

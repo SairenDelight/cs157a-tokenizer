@@ -1,1 +1,0 @@
-Let us introduce a new dimension time_delta that has values one_day, two_day 205, at the day level, and values one_month, two_month, \205, at the month level, etc.

@@ -1,3 +1,0 @@
-select wssn, pname
-from works_on, project
-where pno = pnumber;

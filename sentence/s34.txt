@@ -1,1 +1,0 @@
-VLDB'98, 1998 5  J. Han, S. Chee, and J. Y. Chiang, "Issues for On-Line Analytical Mining of Data Warehouses", SIGMOD'98 Workshop on Research Issues on Data Mining and Knowledge Discovery \(DMKD'98\ , USA, 1998 6  J. Han, "OLAP Mining: An Integration of OLAP with Data Mining", Proc.

@@ -1,1 +1,0 @@
-The slices of these cubes shown in Figure 2 correspond to the same list of values in dimension merchant, time, area and customer_group  Multidimensional and multilevel rules Representing association rules by cubes and underlying cubes by hierarchical dimensions, naturally supports multidimensional and multilevel rules.

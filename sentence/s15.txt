@@ -1,1 +1,0 @@
-The data flows in continuously and is processed daily Mining association rules dynamically has the following benefits 267  223Real-time\224 data mining, that is, the rules are drawn from the latest transactions for reflecting the current commercial trends 267  Multilevel knowledge abstraction, which requires summarizing multiple partial results.

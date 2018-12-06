@@ -1,1 +1,0 @@
-We plan to integrate this framework with a commercial e-commerce system References 1  Sameet Agarwal, Rakesh Agrawal, Prasad Deshpande Ashish Gupta, Jeffrey F. Naughton, Raghu Ramakrishnan, Sunita Sarawagi, "On the Computation of Multidimensional Aggregates", 506-521, Proc.

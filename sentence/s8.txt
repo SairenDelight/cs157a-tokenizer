@@ -1,4 +1,0 @@
-Rules with Conjoint Items Cubes with conjoint dimensions can be used to represent refined multidimensional association rules For example, using OLAP, we can derive association rules across time  Time-variant or temporal association rules such as 
-
-
-x 316 Customers buy_product\(x,\222 A\222, \221 Jan98\222  336 buy _product\(x, \221B\222, \221 Feb98\222   275 area = \221Los Angeles\222 can be used to answer such questions as \223 How are  the sales of B in Feb98  associated with the sales of A in Jan98 224 The items in this rule are value pairs of dimensions product and time In order to specify this kind of association rule we introduce a conjoint dimension product, time and mirror it with dimension product2, time2 This allows a cell in the association cube to cross two time values.

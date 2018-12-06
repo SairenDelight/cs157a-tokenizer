@@ -1,1 +1,0 @@
-Lakshmanan, Jiawei Han Alex Pang, "Exploratory Mining and Pruning Optimizations of Constrained Associations Rules", Proc ACM-SIGMOD'98, 1998 8  Torben Bach Pedersen, Christian S. Jensen Multidimensional Data Modeling for Complex Data Proc.

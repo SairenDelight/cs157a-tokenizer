@@ -1,1 +1,0 @@
-Our preliminary results validate the scalability and maintainability of this infrastructure, and the power of the enhanced multilevel and multidimensional association rules.
