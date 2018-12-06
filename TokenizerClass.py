@@ -1,5 +1,6 @@
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize
+from nltk.util import ngrams
 from nltk.corpus import stopwords
 from nltk.stem.porter import *
 from openpyxl import Workbook
@@ -8,7 +9,6 @@ import os
 import sys
 import math
 import time
-import multiprocessing as mp
 
 
 
@@ -21,6 +21,11 @@ def getDirectoryOfData():
     filesPath = []
     for files in dataFiles:
         filesPath.append(dataDir+"/"+files)
+    dataDir = os.path.realpath('.') + '/sentence'
+    dataFiles = os.listdir(dataDir)
+    for files in dataFiles:
+        filesPath.append(dataDir+"/"+files)
+    # print(filesPath)
     return filesPath
 
 class Tokenizer(object):
@@ -48,20 +53,27 @@ class Tokenizer(object):
         self.__key_words = {}
         self.__tokenized_stemmed_words = {}
         self.__variation_of_stem_forms = {}
+        self.__tfidf = []
         self.data_excel_sheet = excel_sheet
         self.__file_paths = file_paths
         self.__total_num_of_doc = len(file_paths)
 
-        self.__dbUser = "tyler"
-        self.__dbPassword = "veeman"
+        self.__dbUser = "root"
+        self.__dbPassword = ""
         self.__dbDatabase = "db_stem"
         self.max_gap = 0
-        self.__dbHost = "10.12.139.255"
+        self.__dbHost = "localhost"
+
+
+
 
 
 
 
     def run(self):
+        '''
+            This runs the tokenizer
+        '''
         # This will collect all of the TF first
         for docID,path in enumerate(self.__file_paths):
             tokenized_stemmed_words = self.start_stemming_document(path)
@@ -75,11 +87,40 @@ class Tokenizer(object):
             self.store_df_calc(token_value,self.__total_num_of_doc,num_of_doc_with_token)
             self.store_tfidf_calc(token_value)
         # self.__store_data_into_excel(self.__tokenized_words)
-        self.__store_data_into_db(self.__tokenized_stemmed_words)
-        #self.__store_data_into_excel(self.__tokenized_stemmed_words)
-        self.__calculate_max_gap()
+        # self.__store_data_into_db(self.__tokenized_stemmed_words)
+        # self.__store_data_into_excel(self.__tokenized_stemmed_words)
+        # self.__calculate_max_gap()
+        self.__calculate_max_gap_wo_db()
+        for token,values in self.__tokenized_stemmed_words.items():
+            for index,(key,value) in enumerate(values[0].items()):
+                if(value[2] >= self.max_gap and value[2] <= 0.2):
+                    self.__key_words[token] = 1
+        for key,value in self.__tokenized_stemmed_words.items():
+            print("Token: [" + str(key) + "] ||| Value: [" + str(value)+"]")
 
 
+    def getTFIDFList(self):
+        return self.__tfidf
+
+
+    def __calculate_max_gap_wo_db(self):
+        '''
+            Calculating the max gap without the database so it's faster
+        '''
+        for token,values in self.__tokenized_stemmed_words.items():
+            for key,value in values[0].items():
+                self.__tfidf.append(value[2])
+
+        previous = 0
+        print(self.__tfidf.sort())
+        for value in self.__tfidf:
+            if previous == 0:
+                previous = value
+            else:
+                gap = abs(value - previous)
+                if(self.max_gap < gap):
+                    self.max_gap = gap
+                previous = value
 
 
 
@@ -99,7 +140,18 @@ class Tokenizer(object):
             text = document.read()
         tokenized_text = word_tokenize(text)
         stemmed_tokenized_text = [ps.stem(words) for words in tokenized_text]
-        return stemmed_tokenized_text
+        bigrm = ngrams(tokenized_text,2)
+        # trigrm = ngrams(tokenized_text,3)
+        # fourgrm = ngrams(tokenized_text,4)
+        # fivegrm = ngrams(tokenized_text,5)
+        # fused_grm = list(bigrm)+list(trigrm)+list(fourgrm)+list(fivegrm)
+        fused_grm = list(bigrm)
+        grm_list=[]
+        for tuple in fused_grm:
+            string = ' '.join(tuple)
+            grm_list.append(string)
+        wordlist = stemmed_tokenized_text + grm_list
+        return wordlist
 
 
 
@@ -119,6 +171,7 @@ class Tokenizer(object):
         with open(file_path_of_doc,"r") as document:
             text = document.read()
         return word_tokenize(text)
+
 
 
 
@@ -340,14 +393,18 @@ class Tokenizer(object):
                                      password = self.__dbPassword,
                                      host = self.__dbHost)
         mycursor = mydb.cursor()
-        self.recreateTable(mycursor, mydb)
+        self.recreateTable(mycursor,mydb)
         mycursor.close()
         mydb.close()
 
-        past_millis = int(round(time.time() * 1000))
+        mydb = mysql.connector.connect(
+                                     user = self.__dbUser,
+                                     password = self.__dbPassword,
+                                     host = self.__dbHost,
+                                     database = self.__dbDatabase)
+        mycursor = mydb.cursor(buffered=True)
 
-        pool = mp.Pool(mp.cpu_count())
-        tasks = []
+        past_millis = int(round(time.time() * 1000))
 
         for token,documents in word_dict.items():
             for key,val in documents[0].items():
@@ -356,13 +413,21 @@ class Tokenizer(object):
                 tf = val[1]
                 df = documents[1]
                 tfidf = val[2]
+                self.updateDatabase(mycursor,mydb, token, document_ID,tf,df,tfidf)
+        #
+        # mycursor.execute("SELECT token, tfidf FROM stem_data ORDER BY tfidf DESC")
+        # row = mycursor.fetchone()
+        # previous = 0
+        # while row is not None:
+        #     if previous == 0:
+        #         print("Token: " + row[0] + ", Gap: 0")
+        #     else:
+        #         print("Token: " + row[0] + ", Gap: " + str((previous - row[1])))
+        #     previous = row[1]
+        #     row = mycursor.fetchone()
 
-                tasks.append([token, document_ID, tf, df, tfidf])
-
-        pool.map(self.updateDatabase, tasks)
-        pool.close()
-        pool.join()
-
+        mycursor.close()
+        mydb.close()
         current_millis = int(round(time.time() * 1000))
         result = current_millis-past_millis
         print("Milliseconds: "+ str(result))
@@ -414,7 +479,7 @@ class Tokenizer(object):
 
 
 
-    def updateDatabase(self, args):
+    def updateDatabase(self,cursor,mydb, token, document_ID,tf,df,tfidf):
         '''
             Insert values into tables
 
@@ -423,23 +488,8 @@ class Tokenizer(object):
                 mydb (MySQL Object): the database connection object
                 token, document_ID, tf, df, tfidf: The values from the dictionary
         '''
-
-        mydb = mysql.connector.connect(
-            user=self.__dbUser,
-            password=self.__dbPassword,
-            host=self.__dbHost,
-            database=self.__dbDatabase)
-
-        cursor = mydb.cursor()
-        token = args[0]
-        document_ID = args[1]
-        tf = args[2]
-        df = args[3]
-        tfidf = args[4]
-
         esc_token = token.replace("'","''")
         # print(token)
-        #cursor.execute("LOCK TABLES np_stem_data_t1 WRITE")
         check_data = "SELECT (1) FROM np_stem_data_t1 WHERE token ='%s' limit 1" % (esc_token)
         cursor.execute(check_data)
         results = cursor.fetchone()
@@ -447,17 +497,11 @@ class Tokenizer(object):
             sql="INSERT INTO np_stem_data_t1(token, df) VALUES (%s,%s)"
             value = (token,df)
             cursor.execute(sql,value)
-        #cursor.execute("UNLOCK TABLES")
-        #cursor.execute("LOCK TABLES np_stem_data_t2 WRITE")
         sql="INSERT INTO np_stem_data_t2(token, doc_ID,tf, tfidf) VALUES (%s,%s,%s,%s)"
         value = (token,document_ID,tf,tfidf)
         cursor.execute(sql,value)
-        #cursor.execute("UNLOCK TABLES")
         check_data = "SELECT token,df FROM np_stem_data_t1 WHERE token = '%s'" % (esc_token)
         mydb.commit()
-        cursor.close()
-        mydb.close()
-
 
 
 
@@ -488,7 +532,7 @@ class Tokenizer(object):
             mydb = mysql.connector.connect(
                                      user = self.__dbUser,
                                      password = self.__dbPassword,
-                                     host = self.__dbHost,
+                                     host = 'localhost',
                                      database = self.__dbDatabase)
             mycursor = mydb.cursor(buffered=True)
         except:
@@ -509,7 +553,7 @@ class Tokenizer(object):
                     previous = row[0]
 
         except:
-            print("Query tfidf has failed")
+            print("Query tfidf has failed to calculate max gap")
         mycursor.close()
         mydb.close()
 
@@ -547,6 +591,11 @@ def main():
     tokenizer1.run()
     result = tokenizer1.get_max_gap()
     print("The Max Gap is : " + '{0:.11g}'.format(result))
-    wb.save('Tokenizer_data.xlsx')
+    sorted(tokenizer1.get_key_words_data().keys())
+    print("Keywords are : ")
+    for key in tokenizer1.get_key_words_data().keys():
+        print(key)
+    # print(tokenizer1.getTFIDFList())
+    # wb.save('Tokenizer_data.xlsx')
 
 main()
