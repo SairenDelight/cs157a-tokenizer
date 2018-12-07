@@ -1,0 +1,1 @@
+This is illustrated in Figure 3 6  Conclusions In order to scale-up association rule mining in ecommerce, we have developed a distributed and cooperative data-warehouse/OLAP infrastructure.

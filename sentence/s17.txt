@@ -1,0 +1,1 @@
+In fact multilevel mining is incremental in nature 267  For scalability, incremental and distributed mining has become a practical choice Figure 3: Distributed rule mining Incremental association rule mining requires combining partial results.

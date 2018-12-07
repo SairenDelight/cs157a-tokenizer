@@ -1,0 +1,1 @@
+Below, we discuss several cases to show how a GDOS can mine association rules by incorporating the partial results computed at LDOSs 267  The first case is to sum up volume-cubes generated at multiple LDOSs.

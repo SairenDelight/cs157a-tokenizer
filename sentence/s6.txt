@@ -1,0 +1,1 @@
+the cube representing the purchase volumes of customers dimensioned by product  area etc, into an association cube a base cube and a population cube These cubes are then used to derive the confidence cube and the support cube of multidimensional association rule instances.

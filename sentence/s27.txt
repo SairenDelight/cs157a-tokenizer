@@ -1,0 +1,1 @@
+This infrastructure allows us to generate association rules with enhanced expressive power, by combining information of discrete commercial activities from different geographic areas, different merchants and over different time periods.

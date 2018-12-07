@@ -1,0 +1,1 @@
+In this paper we have introduced scoped association rules  association rules with conjoint items and functional association rules as useful extensions to association rules The proposed infrastructure has been designed and prototyped at HP Labs to support business intelligence applications in e-commerce.

@@ -1,0 +1,1 @@
+Also these rules are well organized and can be easily queried  First, the cells of an association cube with different dimension values are related to association rule instances in different scopes.
