@@ -1,0 +1,1 @@
+In Section V, we present our privacy-preserving solutions for association rule mining and frequent itemset mining on vertically partitioned databases, followed by the security analysis and performance evaluation in Section VI and Section VII, respectively.

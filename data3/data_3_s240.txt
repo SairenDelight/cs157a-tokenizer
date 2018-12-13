@@ -1,0 +1,4 @@
+(c1 ¡Ám2) mod p = sd1 (r1q +m1) mod p ¡Ám2 mod p = sd1 (r1m2q +m1 ¡Ám2) mod p 
+
+C. Proposed Secure Outsourced Comparison Scheme 
+The proposed secure comparison scheme is based on the symmetric homomorphic encryption scheme discussed in Section IV-A.

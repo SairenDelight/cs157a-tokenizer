@@ -1,0 +1,1 @@
+Data owners should learn as little informa-tion about databases belonging to other data owners as possible.

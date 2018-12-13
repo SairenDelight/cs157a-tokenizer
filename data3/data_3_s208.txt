@@ -1,0 +1,1 @@
+In this paper, we propose a sym-metric homomorphic encryption scheme (using only modular additions and multiplications), which is signi.cantly more ef.cient than asymmetric schemes.

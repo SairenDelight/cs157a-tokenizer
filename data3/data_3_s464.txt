@@ -1,0 +1,1 @@
+PERFORMANCE EVALUATION In this section, we evaluate the computational complexity, communication complexity and storage cost of our association rule mining and frequent itemset mining solutions.

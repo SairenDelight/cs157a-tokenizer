@@ -1,0 +1,2 @@
+Frequent Itemset Mining Solution 
+We describe our frequent itemset mining solution in the t-data-owner setting below, and an example is shown in Tables II, III and IV.

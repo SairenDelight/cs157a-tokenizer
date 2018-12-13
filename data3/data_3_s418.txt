@@ -1,0 +1,1 @@
+Without knowing the plaintexts of encrypted items, the cloud cannot learn any sensitive information about the transaction data and mining result of the outsourced database.

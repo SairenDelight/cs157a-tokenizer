@@ -1,0 +1,2 @@
+From the correctness proof in Section IV-C, we know that 
+mi ¡Ý0 .

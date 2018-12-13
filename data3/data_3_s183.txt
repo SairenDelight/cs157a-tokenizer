@@ -1,0 +1,1 @@
+To counter frequency analysis attack, .ctitious items or transactions can be added to hide item frequency.

@@ -1,0 +1,1 @@
+An itemset X¡¯s encrypted support, E(Supp(X)),is computed using the ERVs of the transactions contain-ing X.

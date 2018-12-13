@@ -1,0 +1,1 @@
+1) All data owners and the cloud run the above frequent itemset mining solution to mine frequent itemsets.

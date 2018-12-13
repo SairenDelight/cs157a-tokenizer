@@ -1,0 +1,1 @@
+The communication traf.c and storage cost in our solutions are dominated by the joint database size and the size of all ERVs.

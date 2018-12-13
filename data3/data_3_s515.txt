@@ -1,0 +1,1 @@
+To estimate the running time, we measure the speeds of two popular asymmetric additive homomor-phic encryption schemes (i.e., Paillier Paillier and ElGamal) implemented in Java, and we remark that ElGamal is the scheme suggested by [13].

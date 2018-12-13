@@ -1,0 +1,1 @@
+Let the set V (X) be the indices of transactions containing X,and the set M(X) be the indices of the data owners involving X.

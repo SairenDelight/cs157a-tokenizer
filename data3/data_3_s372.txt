@@ -1,0 +1,3 @@
+C. Association Rule Mining Solution 
+Based on the above frequent itemset mining solution, we can build a cloud-aided privacy-preserving association rule mining 
+solution for vertically partitioned databases.

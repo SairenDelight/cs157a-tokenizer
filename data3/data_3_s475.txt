@@ -1,0 +1,1 @@
+Our solutions are implemented in JAVA, and we use a JAVA implementation [27] of Apriori, Eclat and FP-growth algorithms in our experiments.

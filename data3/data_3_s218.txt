@@ -1,0 +1,1 @@
+The algorithm outputs a plaintext m ¡û D(SK, c, d).Let s.d denote the multiplicative inverse of sd in the .eld Fp.The correctness proof of the decryption algorithm is given below.

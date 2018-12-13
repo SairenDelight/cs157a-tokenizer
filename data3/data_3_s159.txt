@@ -1,0 +1,3 @@
+C. Design Goals 
+The goals of our proposed privacy-preserving association rule mining and frequent itemset mining for vertically parti-tioned databases are as follow: 
+.

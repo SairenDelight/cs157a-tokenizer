@@ -1,0 +1,5 @@
+More speci.cally, a data owner¡¯s raw transaction details should not be disclosed, and the supports should be concealed to avoid leakage of information about the 
+
+TABLE I AN EXAMPLE OF SUBSTITUTION ALPHABET 
+
+raw data [11].

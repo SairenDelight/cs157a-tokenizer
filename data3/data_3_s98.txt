@@ -1,0 +1,1 @@
+This paper proposes an ef.cient homomorphic encryption scheme and a secure outsourced comparison scheme.

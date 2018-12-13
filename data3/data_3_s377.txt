@@ -1,0 +1,1 @@
+In addition, data owners do not need to decrypt frequent itemsets.

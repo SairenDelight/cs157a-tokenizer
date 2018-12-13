@@ -1,0 +1,1 @@
+As shown below, given d1-degree ciphertext c1 and d2-degree ciphertext c2,the d1 +d2-degree ciphertext of m1 ¡Ám2 can be computed with a modular multiplication.

@@ -1,0 +1,2 @@
+Available: http://dx.doi.org/10.1007/978-3-319-06608-0_50 
+[32] 	J. Lai, Y. Li, R. H. Deng, J. Weng, C. Guan, and Q. Yan, ¡°Towards semantically secure outsourcing of association rule mining on categorical data,¡± Inf.

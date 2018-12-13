@@ -1,0 +1,1 @@
+Vaidya and Clifton [9] and Kantarcioglu and Clifton [10] are the .rst to identify and address privacy issues in horizontally / vertically partitioned databases.

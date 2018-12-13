@@ -1,0 +1,1 @@
+For most reasonable transaction sizes, our solutions resulted in an in communication traf.c and storage cost only by a few times.

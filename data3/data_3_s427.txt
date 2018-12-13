@@ -1,0 +1,1 @@
+For example, the data owner could compute an ERV with a customized random ingredient.

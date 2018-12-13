@@ -1,0 +1,4 @@
+Once the databases have been encrypted, they are outsourced to the cloud as part of the joint database 
+TABLE II 	TABLE III 
+ORIGINAL DATABASES (BEFORE PREPROCESSING STAGE) PREPROCESSED DATABASES FOR OUTSOURCING (AFTER STEP 5 OF PREPROCESSING STAGE) 
+maintained by the cloud.

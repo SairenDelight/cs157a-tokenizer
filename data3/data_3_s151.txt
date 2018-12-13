@@ -1,0 +1,1 @@
+We assume each data owner has some knowledge of other owners¡¯ private databases.

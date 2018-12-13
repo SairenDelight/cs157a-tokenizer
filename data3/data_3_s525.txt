@@ -1,0 +1,1 @@
+Tables VII and VIII list the joint database size of two datasets under different settings of k and t. The joint database in our solutions contains .ctitious transactions, while the one in class algorithms does not.

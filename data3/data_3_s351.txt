@@ -1,0 +1,1 @@
+3) For each seemingly frequent itemset, the cloud veri.es whether it is real frequent or not in a privacy-preserving manner, and computes its ESVR.

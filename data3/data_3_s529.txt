@@ -1,0 +1,1 @@
+dmax is not larger than 4 for most settings in the above experiments, and the largest dmax observed in the above experiments is 6.

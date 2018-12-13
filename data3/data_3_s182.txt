@@ -1,0 +1,1 @@
+For example, if an attacker knows that bread and milk are the most and second most frequent items in a transaction database, the attacker can infer that the most and second most frequent ciphertext units in the encrypted database correspond to bread and milk, respectively.

@@ -1,0 +1,1 @@
+Data owner¡¯s running time doesn¡¯t increase with k either.

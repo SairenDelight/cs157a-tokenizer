@@ -1,0 +1,2 @@
+Available: http://dx.doi.org/10.1137/1.9781611974010.28 
+[19] 	W. K. Wong, D. W. Cheung, E. Hung, B. Kao, and N. Mamoulis, ¡°Security in outsourcing of association rule mining,¡± in Proc.

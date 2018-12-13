@@ -1,0 +1,1 @@
+The selection rules are shown in Table V. D1 will select these bit lengths, and the other data own-ers will verify whether the lengths satisfy the selection rules.

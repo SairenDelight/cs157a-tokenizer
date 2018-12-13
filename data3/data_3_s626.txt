@@ -1,0 +1,1 @@
+The number of an item¡¯s occurrences in the .ctitious transactions is equal to its noise calculated in the third step.

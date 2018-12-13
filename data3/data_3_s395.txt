@@ -1,0 +1,3 @@
+SECURITY ANALYSIS 
+
+In this section, we analyze the security properties of the proposed solutions, focusing on how our solutions can pro-tect a data owner¡¯s data from the cloud and the other data owners.

@@ -1,0 +1,1 @@
+Therefore, the cloud cannot determine whether any two ERVs share the same plaintext or not.

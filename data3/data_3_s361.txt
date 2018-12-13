@@ -1,0 +1,1 @@
+4) 	The cloud returns seemingly frequent itemsets and their ESVRs to involved data owners.

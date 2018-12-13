@@ -1,0 +1,1 @@
+Since both data and computing work are outsourced to the cloud servers, the resource consumption at the data owner end is very low.

@@ -1,0 +1,2 @@
+Preprocessing Stage: 
+1) 	Initialization for homomorphic encryption Let D1, D2...Dt be the data owners.

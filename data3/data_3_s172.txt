@@ -1,0 +1,2 @@
+Substitution Cipher and Frequency Analysis 
+A substitution cipher encrypts a message by substituting the units of the message with ciphertext units according to a substitution alphabet.

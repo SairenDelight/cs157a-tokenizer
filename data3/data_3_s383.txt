@@ -1,0 +1,1 @@
+4) 	For each association rule candidate, the cloud veri.es its con.dence in a privacy-preserving manner, and com-putes its ECVR (Encrypted Con.dence Verifying Result).

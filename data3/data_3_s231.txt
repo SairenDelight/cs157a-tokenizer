@@ -1,0 +1,1 @@
+To correctly decrypt m1 .m2 from its ciphertext, r1 .r2 must be satis.ed.

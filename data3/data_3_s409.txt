@@ -1,0 +1,1 @@
+Then, X can be divided into b itemset(s), and each has only one data owner¡¯s item(s).

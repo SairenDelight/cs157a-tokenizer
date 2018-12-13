@@ -1,0 +1,1 @@
+In con-trast, we present solutions for both frequent itemset mining and association rule mining.

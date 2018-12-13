@@ -1,0 +1,1 @@
+If c1 and c2 have different ciphertext degrees, homomorphic addition/ subtraction can be performed after upgrading the lower-degree ciphertext to a ciphertext of the higher degree.

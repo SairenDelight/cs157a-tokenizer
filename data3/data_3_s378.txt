@@ -1,0 +1,1 @@
+2) 	Initialization for secure threshold comparison A data owner, say D1, computes cz =E(SK, 0),and sends cz along with n1and n2 to the cloud where n1and n2are twointegers and n2/n1 =Tc.To prevent D1 deviating from the cooperative mining protocol, the cloud sends these received ciphertexts and plaintexts to other data owners for correctness veri.cation.

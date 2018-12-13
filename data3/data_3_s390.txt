@@ -1,0 +1,1 @@
+6) 	The data owners decrypt association rule candidates, ESVRs and ECVRs to .nd out real association rules.

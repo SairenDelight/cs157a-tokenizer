@@ -1,0 +1,1 @@
+Our association rule mining solution includes two stages, namely: preprocessing and mining.

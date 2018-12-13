@@ -1,0 +1,1 @@
+Each data owner inserts .ctitious transactions to his private database, and encrypts items in the database with a sub-stitution cipher.

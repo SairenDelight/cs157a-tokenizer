@@ -1,0 +1,1 @@
+Y , the master sends the ID lists of the transactions containing X ¡È Y and the transactions containing X to the third-party server.

@@ -1,0 +1,1 @@
+In the preprocessing stage, data owners and the cloud collaborate to generate an encrypted joint database at the cloud¡¯s end and some auxiliary data for privacy-preserving mining.

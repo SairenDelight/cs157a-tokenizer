@@ -1,0 +1,1 @@
+The i-th transaction, which may contain .ctitious data, truly contains X if ERVi, j is a ciphertext of ¡°1¡± for every j ¡Ê M(x).

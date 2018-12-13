@@ -1,0 +1,3 @@
+4, the running time of [13]¡¯s strong solution is several orders of magnitude 
+B. Communication Complexity and Storage Cost 
+Similar to most other solutions, our solutions require con-stant communication rounds.

@@ -1,0 +1,1 @@
+Finally, data owners decrypt the encrypted verifying results and association rule candidates to recover the real association rules.

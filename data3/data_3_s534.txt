@@ -1,0 +1,1 @@
+The storage cost in [13]¡¯s strong solution is O(n ¡Á m), while the communication traf.c is O(Ts ¡Át ¡Á F ¡ÁC) where F is the number of frequent itemsets.

@@ -1,0 +1,1 @@
+Using these techniques alone, however, is not suf.cient to protect data privacy in the vertically partitioned database setting.

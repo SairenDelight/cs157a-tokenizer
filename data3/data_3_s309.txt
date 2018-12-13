@@ -1,0 +1,1 @@
+2) 	Initialization for secure threshold comparison To enable outsourced secure comparison, each data owner computes a 1-degree ciphertext of ¡°1¡±, and sends it to the cloud.

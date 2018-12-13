@@ -1,0 +1,1 @@
+Fourthly, to achieve k-anonymity frequency, the data owner generates .ctitious transactions based on the result of the third step.

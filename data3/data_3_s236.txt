@@ -1,0 +1,2 @@
+Then we can do 
+homomorphic addition/subtraction of c1 and c2.

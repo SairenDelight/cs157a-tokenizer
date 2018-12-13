@@ -1,0 +1,3 @@
+After inserting the 
+
+.ctitious transactions, each item shares the same frequency with at least k .

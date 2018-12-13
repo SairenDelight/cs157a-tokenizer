@@ -1,0 +1,2 @@
+C. Other Related Work 
+Other than the settings of vertically partitioned databases and cloud/third-party-aided mining, privacy-preserving fre-quent itemset mining and association rule mining have been studied in the settings of horizontally partitioned databases [10], [33]¨C[35], data publishing [36] and differential privacy [37].

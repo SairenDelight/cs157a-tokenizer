@@ -1,0 +1,1 @@
+2) 	The cloud computes the encrypted support for each seemingly frequent itemset.

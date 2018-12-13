@@ -1,0 +1,1 @@
+Applying this solution to vertically partitioned databases will also result in the leakage of the exact supports to data owners.

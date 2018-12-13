@@ -1,0 +1,1 @@
+However, both supports and con.dences must be kept secret from the cloud and data owners, while the comparison results must be kept secret from the cloud.

@@ -1,0 +1,1 @@
+ERVs are encrypted with a probabilistic encryption scheme, and any two ERVs are different even if their plaintexts are the same.

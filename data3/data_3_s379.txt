@@ -1,0 +1,1 @@
+To reduce communication rounds, this step can be performed together with the ¡°initialization for secure threshold comparison¡± step in frequent itemset mining.

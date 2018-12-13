@@ -1,0 +1,1 @@
+The parameter d is a small positive integer called ciphertext degree, and we say the ciphertext is a d-degree ciphertext.Let r denote a big random positive integer, and the bit length of r, |r|, satis.es |r|+|q|< |p|.We say r is the random ingredient of c. The encryption of a plaintext m is denoted by E(m) for short.

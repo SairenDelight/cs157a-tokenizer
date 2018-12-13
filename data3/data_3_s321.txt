@@ -1,0 +1,1 @@
+4) 	Each data owner tags his private database¡¯s transac-tions with 1-degree ERVs.

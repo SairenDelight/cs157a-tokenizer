@@ -1,0 +1,1 @@
+Firstly, the data owner scans the database to count each individual item¡¯s support.

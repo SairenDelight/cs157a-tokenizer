@@ -1,0 +1,1 @@
+Different from existing solutions based on homomorphic encryption, we use symmetric homomorphic encryption instead of asymmetric homomorphic encryption, and the manner in which we use homomorphic encryption also differs from existing solutions.

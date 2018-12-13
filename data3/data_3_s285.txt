@@ -1,0 +1,1 @@
+The .ctitious transactions are used to mitigate frequency analysis attacks (due to the inherent weakness of the substitution cipher).

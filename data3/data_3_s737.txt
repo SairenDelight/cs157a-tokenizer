@@ -1,0 +1,2 @@
+Available: http://dx.doi.org/10.1109/ TIT.1985.1057074 
+[25] 	N. Courtois, A. Klimov, J. Patarin, and A. Shamir, ¡°Ef.cient algorithms for solving overde.ned systems of multivariate polynomial equations,¡± in Proc.

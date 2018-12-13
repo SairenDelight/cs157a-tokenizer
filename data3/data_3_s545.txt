@@ -1,0 +1,1 @@
+The third-party server is assumed not to be colluding with any data owner, but it cannot be trusted to hold the raw data.

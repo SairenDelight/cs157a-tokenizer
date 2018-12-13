@@ -1,0 +1,1 @@
+Moreover, as shown in Section VII, our frequent itemset mining solution is 3 to 5 orders faster.

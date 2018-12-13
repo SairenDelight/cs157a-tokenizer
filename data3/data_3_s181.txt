@@ -1,0 +1,1 @@
+Attackers with some knowledge of the frequencies of message units or unit groups can recover some plaintext through frequency analysis.

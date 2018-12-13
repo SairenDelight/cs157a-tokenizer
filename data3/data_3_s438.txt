@@ -1,0 +1,1 @@
+In the proposed mining solutions, a number of plaintexts and their corresponding ciphertexts (i.e.

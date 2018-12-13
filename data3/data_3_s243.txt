@@ -1,0 +1,1 @@
+As shown in Section V, these secure comparison problems can be transformed to the same form below.

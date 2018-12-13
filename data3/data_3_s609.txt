@@ -1,0 +1,1 @@
+The goal is to ensure that each item share the same frequency with at least k .

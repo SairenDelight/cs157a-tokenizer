@@ -1,0 +1,2 @@
+REFERENCES 
+[1] 	T. Brijs, G. Swinnen, K. Vanhoof, and G. Wets, ¡°Using association rules for product assortment decisions: A case study,¡± in Proc.

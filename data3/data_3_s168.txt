@@ -1,0 +1,1 @@
+In our context, the data mining latency should be acceptable compared with the latencies of non-privacy-preserving data mining algorithms.

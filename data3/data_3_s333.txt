@@ -1,0 +1,1 @@
+The cloud computes r = c¡Êe c mod p, and sends r to all data owners.

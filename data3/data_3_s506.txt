@@ -1,0 +1,1 @@
+Speci.cally, data owner¡¯s running time is dominated by the time to run this algorithm, which is hardly affected by changes in the values of k. In summary, increasing t and k usually results in a higher running time at the cloud end, without resulting in an increase in data owner¡¯s running time.

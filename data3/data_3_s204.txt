@@ -1,0 +1,1 @@
+Using the proposed homomorphic encryp-tion scheme, we construct a secure outsourced comparison scheme.

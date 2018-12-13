@@ -1,0 +1,1 @@
+Compared with the fastest algorithm¡¯s running time, the cloud¡¯s running time is about one order higher for most cases, while data owner¡¯s running time is very low.

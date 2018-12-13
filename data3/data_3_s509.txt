@@ -1,0 +1,1 @@
+Similar to our solutions, [13]¡¯s strong solution uses homo-morphic encryption.

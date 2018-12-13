@@ -1,0 +1,1 @@
+Each data owner sends his encrypted database along with ERVs to the cloud, and the cloud joins received transactions by TIDs to create a joint database.

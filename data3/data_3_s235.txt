@@ -1,0 +1,1 @@
+A d1-degree ciphertext of m2, c2, can be computed by doing a homomorphic multiplication of c2 and a (d1 .d2) .degree ciphertext of 1.

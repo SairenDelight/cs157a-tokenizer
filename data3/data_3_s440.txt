@@ -1,0 +1,1 @@
+Therefore, the underlying homomorphic encryption scheme should be secure under known-plaintext attacks.

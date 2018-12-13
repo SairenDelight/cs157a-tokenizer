@@ -1,0 +1,1 @@
+the item with the highest support), the data owner assigns every k adjacent items to a new created group.

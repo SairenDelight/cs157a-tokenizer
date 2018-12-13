@@ -1,0 +1,1 @@
+The main idea of our frequent itemset mining solution is similar, and the only differences are in the mining stage.

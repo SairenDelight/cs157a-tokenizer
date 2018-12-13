@@ -1,0 +1,1 @@
+However, some data owners may deviate from the cooperative mining protocol in order to learn the data of other data owner(s) as long as the deviation does not sabotage the mining result.

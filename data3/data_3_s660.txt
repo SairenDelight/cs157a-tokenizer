@@ -1,0 +1,1 @@
+[8] 	J. Han, J. Pei, and Y. Yin, ¡°Mining frequent patterns without candidate generation,¡± in Proc.

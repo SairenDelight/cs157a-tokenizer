@@ -1,0 +1,4 @@
+In the above equation,
+ 
+ERVi, j mod p is a ciphertext of ¡°1¡± if and 
+j¡ÊM(x) only if each of the data owners M(X) has a real partition in the i-th transaction.

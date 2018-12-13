@@ -1,0 +1,2 @@
+As the running time of association rule mining is only slightly higher than 
+Fig.

@@ -1,0 +1,1 @@
+In the vertically partitioned database setting, data owners are unable to perform such calculation using the techniques described in [21] and [16].

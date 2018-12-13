@@ -1,0 +1,1 @@
+To ensure a fair comparison, in all experiments, machines playing the roles of cloud or data owner have the same hardware and software settings.

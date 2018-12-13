@@ -1,0 +1,1 @@
+Commonly used cryptographic hash functions include SHA-1 [22] and SHA-2 [23].

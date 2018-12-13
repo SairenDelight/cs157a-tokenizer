@@ -1,0 +1,1 @@
+The data owners then decrypt the encrypted verifying results and frequent itemset candidates to recover the real frequent itemsets.

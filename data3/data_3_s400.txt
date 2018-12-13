@@ -1,0 +1,1 @@
+In contrast to the approach in [16], we apply this algorithm in vertically partitioned databases instead of a single database, and we tag transactions with ERVs.

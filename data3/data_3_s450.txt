@@ -1,0 +1,3 @@
+An example of the con.guration is presented in Table V. 
+D. Security of Underlying Secure Comparison Scheme 
+The proposed secure comparison scheme is used in our solutions to conceal the exact support values and con.dence values from the data owners.

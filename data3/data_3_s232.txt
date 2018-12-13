@@ -1,0 +1,3 @@
+(c1 .c2) mod p = (sd1 (r1q +m1) .sd2 (r2q +m2)) mod p = sd1 ((r1 .r2)q +m1 .m2) mod p if d1 =d2 
+
+4) Degree Alignment for Homomorphic Addition/ Subtraction: Homomorphic addition and subtraction requires ciphertexts sharing the same degree.

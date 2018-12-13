@@ -1,0 +1,1 @@
+If the attacker can solve this system, he can learn the secret key of the encryption scheme.

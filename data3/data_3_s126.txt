@@ -1,0 +1,1 @@
+Each data owner has a private database, and the data owners encrypt their private databases prior to outsourcing the encrypted databases to the cloud.

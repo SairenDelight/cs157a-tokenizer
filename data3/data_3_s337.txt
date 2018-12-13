@@ -1,0 +1,1 @@
+As the joint database contains .ctitious data, an itemset¡¯s real support is the same as or lower than its support seen by the cloud.

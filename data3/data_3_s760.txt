@@ -1,0 +1,1 @@
+[31] 	C. Dong and L. Chen, ¡°A fast secure dot product protocol with application to privacy preserving association rule mining,¡± in Proc.

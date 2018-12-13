@@ -1,0 +1,1 @@
+Each data owner will also send his set of real transactions¡¯ IDs to a semi-trusted third-party server.

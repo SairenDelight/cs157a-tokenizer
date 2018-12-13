@@ -1,0 +1,1 @@
+(All items in X are from these data owners, and each of these owners has at least one item in X.)

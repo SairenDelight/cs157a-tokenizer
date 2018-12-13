@@ -1,0 +1,3 @@
+Using their encrypted supports computed earlier, the cloud computes 
+E(Supp(X ¡ÈY ) ¡Án1 .Supp(X) ¡Án2) =(E(Supp(X ¡ÈY )) ¡Án1 +(cz .E(Supp(X))) ¡Án2) mod p 
+and compares Supp(X ¡ÈY )¡Án1 .Supp(X)¡Án2 with 0 using our secure comparison scheme.

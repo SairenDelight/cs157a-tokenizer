@@ -1,0 +1,1 @@
+If each data owner has one or more rows (i.e.

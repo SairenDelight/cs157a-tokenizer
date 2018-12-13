@@ -1,0 +1,1 @@
+Both solutions are designed for applications where data owners have a high level of privacy requirement.

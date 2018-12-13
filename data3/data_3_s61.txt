@@ -1,0 +1,1 @@
+in the joint database, we say that the database is horizontally partitioned.

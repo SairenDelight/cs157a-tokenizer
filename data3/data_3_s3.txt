@@ -1,0 +1,1 @@
+To ensure data privacy, we design an ef.cient homomorphic encryption scheme and a secure comparison scheme.

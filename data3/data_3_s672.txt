@@ -1,0 +1,1 @@
+[11] 	B. Rozenberg and E. Gudes, ¡°Association rules mining in vertically partitioned databases,¡± Data Knowl.

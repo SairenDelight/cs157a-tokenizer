@@ -1,0 +1,1 @@
+Classic frequent itemset mining and association rule mining algorithms, such as Apriori [6], Eclat [7] and FP-growth [8], were designed for a centralized database setting where the raw data is stored in the central site for mining.

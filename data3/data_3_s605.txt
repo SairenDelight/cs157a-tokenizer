@@ -1,0 +1,1 @@
+Both schemes have potential usage in other secure computation applications, such as secure data aggregation, beyond the data mining solutions described in this paper.

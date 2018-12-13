@@ -1,0 +1,1 @@
+Thus, the data owner knows the transaction associated with the ERV contains the itemset.

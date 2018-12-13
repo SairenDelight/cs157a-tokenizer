@@ -1,0 +1,2 @@
+B. Privacy-Preserving Outsourced Association Rule Mining and Frequent Itemset Mining 
+Privacy-preserving outsourced frequent itemset mining and association rule mining have been studied in the setting of a single data owner [16], [19]¨C[21].

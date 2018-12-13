@@ -1,0 +1,1 @@
+Therefore, in Section V, we choose the bit lengths of p, q and random ingredients to ensure that all ciphertexts in our privacy-preserving mining solutions can be decrypted correctly.

@@ -1,0 +1,1 @@
+We then propose a cloud-aided frequent itemset mining solution, which is used to build an association rule mining solution.

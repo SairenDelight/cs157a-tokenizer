@@ -1,0 +1,1 @@
+The most common multiplicative homomorphic encryption scheme is ElGamal encryption [24], which is an asymmetric scheme.

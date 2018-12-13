@@ -1,0 +1,1 @@
+Also, in the preprocessing stage, each data owner must verify cs,cz,ce and that ERVs are generated honestly with random ingredients of the right bit lengths.

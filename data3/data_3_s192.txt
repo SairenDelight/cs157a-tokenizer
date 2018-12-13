@@ -1,0 +1,1 @@
+In an additive homomorphic encryption scheme, the cipher-text of the sum of two plaintexts, m1 + m2, can be obtained using some computation ¡°.¡± on the ciphertexts of m1 and m2, without .rst decrypting m1 and m2 or requiring the decryption key.

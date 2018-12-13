@@ -1,0 +1,1 @@
+To avoid the disclosure of supports/con.dences, we design an ef.cient homomorphic encryption scheme to facilitate secure outsourced computation of supports/ con.dences, as well as a secure outsourced compar-ison scheme for comparing supports/con.dences with thresholds.

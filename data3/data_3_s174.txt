@@ -1,0 +1,1 @@
+In such use cases, the message units are the items in a transaction database.

@@ -1,0 +1,1 @@
+In this solution, a data owner known as the master is responsible for the mining.

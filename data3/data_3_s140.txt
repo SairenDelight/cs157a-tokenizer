@@ -1,0 +1,1 @@
+This makes such attacks easier because the cloud only needs to analyze frequencies in a private database to determine the ciphertext of a targeted item.

@@ -1,0 +1,1 @@
+However, association rules cannot be mined based on the result of second solution because con.dences cannot be computed without the exact supports.

@@ -1,0 +1,1 @@
+A ciphertext¡¯s size is O(¦Ë ¡Á dmax ) ¡Ü O(¦Ë ¡Á t),where ¦Ë is the security parameter (typically 80).

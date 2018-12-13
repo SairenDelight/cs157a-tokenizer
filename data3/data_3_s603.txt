@@ -1,0 +1,1 @@
+Our evaluation has also demonstrated that our solutions are very ef.cient; therefore, our solutions are suitable to be used by data owners wishing to outsource their databases to the cloud but require a high level of privacy without compromising on performance.

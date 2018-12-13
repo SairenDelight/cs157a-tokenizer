@@ -1,0 +1,1 @@
+denotes homomorphic addition, and the computing of the ciphertext of m1 ¡Á m2 based on homomorphic addition is referred to as homomorphic scalar multiplication.

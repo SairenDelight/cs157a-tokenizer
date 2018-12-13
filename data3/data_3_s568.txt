@@ -1,0 +1,1 @@
+In our approach, we use homomorphic encryption to create ERVs and build our secure outsourced comparison scheme.

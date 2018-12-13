@@ -1,0 +1,1 @@
+The scheme only requires modular additions and multiplications, and is more ef.cient than the homomor-phic encryption schemes used in other association rule mining and frequent itemset mining solutions.

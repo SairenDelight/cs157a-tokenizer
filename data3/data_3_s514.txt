@@ -1,0 +1,2 @@
+We evaluate its running time by estimating the required time to undertake the operations 
+¨C see Table VI.

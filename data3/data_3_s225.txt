@@ -1,0 +1,1 @@
+It is not hard to do so, as |q| > |m1| and |q| > |m2| and we have |r1r2q| > |r1m2|+|m1r2|.

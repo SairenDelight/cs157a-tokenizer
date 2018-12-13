@@ -1,0 +1,4 @@
+Due to the properties of the proposed homomorphic encryption scheme, the cloud can compute 
+ 
+E(Supp(X)) = ( ERVi, j ) mod p i¡ÊV (x)j¡ÊM(x) 
+without knowing the plaintexts.

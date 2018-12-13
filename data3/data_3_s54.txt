@@ -1,0 +1,1 @@
+In their settings, there are multiple data owners wishing to learn association rules or frequent itemsets from their joint data.

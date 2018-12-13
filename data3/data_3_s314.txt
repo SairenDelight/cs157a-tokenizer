@@ -1,0 +1,1 @@
+3) Each data owner hides data item frequencies by insert-ing .ctitious transactions to his private database.

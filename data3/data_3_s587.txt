@@ -1,0 +1,1 @@
+In our solutions, the cloud rather than the data owners cancels out .ctitious transactions in a privacy-preserving manner, and the under-lying techniques are our homomorphic encryption, secure comparison and ciphertext tag schemes.

@@ -1,0 +1,1 @@
+The key underlying techniques in our solutions are an ef.cient homomorphic encryption scheme and a secure outsourced comparison scheme.

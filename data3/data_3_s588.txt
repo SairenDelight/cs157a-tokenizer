@@ -1,0 +1,1 @@
+Another recent work [32] proposed a privacy-preserving outsourced association rule mining solution based on predi-cate encryption.

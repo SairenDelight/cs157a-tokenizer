@@ -1,0 +1,1 @@
+4], we know that the crack probability for an item or itemset in such a database is no more than 1/k.Now, let us analyze the security of the joined database.

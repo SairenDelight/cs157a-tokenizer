@@ -1,0 +1,2 @@
+Utilizing the homomorphic property of our encryption scheme, the cloud computes 
+E(Supp(Z) .

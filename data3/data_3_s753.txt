@@ -1,0 +1,1 @@
+[29] 	X. Ge, L. Yan, J. Zhu, and W. Shi, ¡°Privacy-preserving distributed association rule mining based on the secret sharing technique,¡± in Proc.

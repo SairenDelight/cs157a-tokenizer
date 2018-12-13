@@ -1,0 +1,2 @@
+Security Under the Cloud¡¯s Attacks 
+1) Con.dentiality of Transactions Under Frequency Analysis Attack: In our solutions, items are encrypted with a substitution cipher.

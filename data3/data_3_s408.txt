@@ -1,0 +1,1 @@
+Let X be an itemset of the joined database, and suppose X¡¯s item(s) are from b data owner(s).

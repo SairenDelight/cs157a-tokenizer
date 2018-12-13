@@ -1,0 +1,1 @@
+To prevent such attacks, we can con.gure large ranges or bit lengths for q,s,ri to compound the challenges of guessing the correct values.

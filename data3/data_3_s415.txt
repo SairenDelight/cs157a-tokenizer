@@ -1,0 +1,1 @@
+Therefore, the cloud cannot distinguish whether a transaction is real or not from its ERV.

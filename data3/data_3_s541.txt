@@ -1,0 +1,1 @@
+The most relevant work is the privacy-preserving association rule mining solution presented in [11].

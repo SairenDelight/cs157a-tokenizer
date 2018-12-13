@@ -1,0 +1,1 @@
+Y is regarded as an association rule if and only if Supp(X ¡È Y ) ¡Ý Ts and Con f (X .

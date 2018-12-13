@@ -1,0 +1,3 @@
+Decryption algorithm D() 
+D(SK, c, d) =(c ¡Ás.d mod p) mod q 
+The decryption algorithm D() is a deterministic algo-rithm, which takes a secret key SK , a ciphertext c ¡ÊFp and the ciphertext¡¯s degree d as inputs.

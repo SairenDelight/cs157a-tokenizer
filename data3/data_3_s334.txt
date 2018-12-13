@@ -1,0 +1,1 @@
+Because of the homomorphic property of the encryp-tion scheme, r is the ciphertext of all RVs¡¯ sum, and r¡¯s random ingredient is the sum of all ERVs¡¯ random ingredients.

@@ -1,0 +1,2 @@
+Available: http://doi.acm.org/10.1145/1244002.1244092 
+[37] 	B. N. Keshavamurthy, A. M. Khan, and D. Toshniwal, ¡°Privacy pre-serving association rule mining over distributed databases using genetic algorithm,¡± Neural Comput.

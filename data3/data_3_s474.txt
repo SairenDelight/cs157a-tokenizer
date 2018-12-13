@@ -1,0 +1,1 @@
+To simulate t data owners, we vertically partitioned each dataset into t databases randomly.

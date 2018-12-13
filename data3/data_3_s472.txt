@@ -1,0 +1,1 @@
+The retail dataset from Tom Brijs contains anonymous retail market basket data in a Belgian retail store, while the pumsb dataset contains census data for population and housing.

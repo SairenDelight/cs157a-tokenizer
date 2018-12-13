@@ -1,0 +1,1 @@
+F is the number of frequent itemsets.

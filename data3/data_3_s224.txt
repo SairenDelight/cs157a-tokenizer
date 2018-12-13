@@ -1,0 +1,1 @@
+Therefore, in Section V, we choose the bit lengths which satisfy the condition and ensure the correctness of decryption.

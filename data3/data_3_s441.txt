@@ -1,0 +1,1 @@
+In our homomorphic encryption scheme, to encrypt a plaintext mi and obtain the correspond-ing ciphertext ci , we require the use of two secrets q,s and a random ingredient ri .

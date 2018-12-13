@@ -1,0 +1,1 @@
+The speeds are measured using a machine of the same speci.cations in our evaluations (see Table V), and so are the datasets and parameters.

@@ -1,0 +1,1 @@
+To counter such an attack, item frequency is hidden by adding .ctitious transactions to data owners¡¯ private databases based on [16]¡¯s algorithm.

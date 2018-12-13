@@ -1,0 +1,1 @@
+We assume each data owner knows the items and the size of any other data owner¡¯s private database.

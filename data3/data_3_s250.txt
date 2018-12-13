@@ -1,0 +1,1 @@
+However, as described in the preceding paragraph, m must be kept secret from the cloud and data owners, while the comparison result is kept secret from the cloud.

@@ -1,0 +1,1 @@
+The bit length of q depends on the security parameter, and s is a random number from Z .

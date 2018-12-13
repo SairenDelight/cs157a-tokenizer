@@ -1,0 +1,2 @@
+Mining Stage: 
+1) 	The cloud runs a classic frequent itemset mining algo-rithm for centralized database named Eclat [7] to .nd out all frequent itemsets of the joint database.

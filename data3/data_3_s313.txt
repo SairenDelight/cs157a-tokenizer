@@ -1,0 +1,1 @@
+To prevent D1 deviating from the cooperative mining protocol, the cloud sends the received cs , ce and Ts to other data owners for correctness veri.cation.

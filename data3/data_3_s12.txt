@@ -1,0 +1,2 @@
+INTRODUCTION REQUENT itemset mining and association rule mining, two widely used data analysis techniques, are generally used for discovering frequently co-occurring data items 
+Manuscript received August 30, 2015; revised February 24, 2016 and April 6, 2016; accepted April 16, 2016.

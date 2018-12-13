@@ -1,0 +1,1 @@
+After inserting the .ctitious transactions, all items in the same group share the same support.

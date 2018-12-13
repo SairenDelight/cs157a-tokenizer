@@ -1,0 +1,1 @@
+Then, we have c1 = s(r1q + m1) mod p and c2 = sd2 (r2q + m2) mod p for some random ingredients r1 and r2.

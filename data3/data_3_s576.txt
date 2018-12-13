@@ -1,0 +1,1 @@
+To counter frequency analysis attack, the data owner inserts .ctitious transactions in the encrypted database to conceal the item frequency.

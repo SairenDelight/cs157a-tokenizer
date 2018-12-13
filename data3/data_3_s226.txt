@@ -1,0 +1,1 @@
+We only need to ensure |r1|+|r2|+2|q|+1 < |p|.

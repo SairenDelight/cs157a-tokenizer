@@ -1,0 +1,1 @@
+Supp(Z) is Z¡¯s support, which is de.ned as Z¡¯s occurrence count in the database.

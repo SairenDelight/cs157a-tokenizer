@@ -1,0 +1,1 @@
+A data owner may use ERVs¡¯ random ingredients to tag some transactions, and verify whether such a transaction contains a given itemset or not.

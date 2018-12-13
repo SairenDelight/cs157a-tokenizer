@@ -1,0 +1,1 @@
+Simi-larly, given EPK (m1), m2 and the public key, one can compute EPK (m1 ¡Á m2) by performing a modular exponentiation EPK (m1)m2.

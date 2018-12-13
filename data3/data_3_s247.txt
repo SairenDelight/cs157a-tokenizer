@@ -1,0 +1,1 @@
+All these ciphertexts share the same degree d. (In our privacy-preserving data mining solutions, c is com-puted by the cloud from outsourced encrypted data utilizing the homomorphic property.)

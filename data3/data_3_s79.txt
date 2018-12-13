@@ -1,0 +1,1 @@
+To the best of our knowledge, this is the .rst work on outsourced association rule mining and frequent itemset mining for vertically partitioned databases.

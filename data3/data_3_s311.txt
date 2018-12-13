@@ -1,0 +1,1 @@
+A data owner, say D1, computes cs = E(SK, .Ts mod q, 1) and ce = E(SK, 1, 1).

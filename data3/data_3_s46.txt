@@ -1,0 +1,1 @@
+We also remark that the values of Ts and Tc are generally con.gured based on the type of transactions, the usage of the mining result, the size of database, etc.

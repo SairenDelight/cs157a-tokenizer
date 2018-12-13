@@ -1,0 +1,1 @@
+5) 	The data owners decrypt the received seemingly fre-quent itemsets¡¯ ESVRs to determine the real frequent itemsets, and decrypt the revealed real frequent itemsets (encrypted with a substitution cipher).

@@ -1,0 +1,1 @@
+5) 	Each data owner encrypts items in his private database with a substitution cipher.

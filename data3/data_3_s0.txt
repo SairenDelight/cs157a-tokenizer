@@ -1,0 +1,7 @@
+Privacy-Preserving-Outsourced Association Rule 
+Mining on Vertically Partitioned Databases 
+
+Lichun Li, Rongxing Lu, Senior Member, IEEE, Kim-Kwang Raymond Choo, Senior Member, IEEE, 
+Anwitaman Datta, and Jun Shao 
+
+Abstract¡ª Association rule mining and frequent itemset mining are two popular and widely studied data analysis tech-niques for a range of applications.

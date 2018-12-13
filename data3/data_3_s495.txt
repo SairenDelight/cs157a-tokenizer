@@ -1,0 +1,1 @@
+5 and 6, we also observe that running time changes with increasing values of k and t. The cloud¡¯s running time increases with t,as dmax increases with t and a larger dmax results in larger ciphertext size and more computations.

@@ -1,0 +1,1 @@
+Let L be the plaintext alphabet including all unique items appearing in a database.

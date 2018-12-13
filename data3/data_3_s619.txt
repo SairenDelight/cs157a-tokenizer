@@ -1,0 +1,1 @@
+If there are less than k unassigned items remaining, these items will be assigned to the last created group.

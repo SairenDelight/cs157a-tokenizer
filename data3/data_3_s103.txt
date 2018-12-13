@@ -1,0 +1,1 @@
+To the best of our knowledge, the proposed secure comparison scheme is the .rst scheme based on symmetric homo-morphic encryption.

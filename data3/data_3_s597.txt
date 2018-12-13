@@ -1,0 +1,1 @@
+This allows the data owners to outsource mining task on their joint data in a privacy-preserving manner.

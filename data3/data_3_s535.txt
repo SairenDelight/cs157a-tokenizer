@@ -1,0 +1,1 @@
+C is the ciphertext size in [13]¡¯s strong solution, which is at least 2048 2048 bits.

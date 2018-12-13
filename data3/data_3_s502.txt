@@ -1,0 +1,1 @@
+If the same joint database is vertically partitioned to more data owners, each data owner¡¯s dataset is smaller.

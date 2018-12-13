@@ -1,0 +1,1 @@
+We evaluated our solutions and three classic non-privacy-preserving algorithms (Apriori, Eclat and FP-growth) using two datasets (retail and pumsb) from [26].

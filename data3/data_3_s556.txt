@@ -1,0 +1,1 @@
+All existing solutions, with the exception of [11], do not utilize a third-party server to server to compute the mining result.

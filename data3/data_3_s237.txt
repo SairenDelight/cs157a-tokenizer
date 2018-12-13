@@ -1,0 +1,1 @@
+5) Homomorphic Scalar Multiplication: Given m1¡¯s cipher-text c1 and a plaintext m2, the ciphertext of m1 ¡Ám2 can be computed with a modular multiplication.

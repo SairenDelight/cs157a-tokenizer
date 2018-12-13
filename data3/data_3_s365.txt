@@ -1,0 +1,1 @@
+In the .rst step of preprocessing stage, using exact max-imum ciphertext degree and joint database size to select bit lengths could reduce ciphertext size.

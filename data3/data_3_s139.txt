@@ -1,0 +1,1 @@
+For each of these items, the cloud may also know which data owner¡¯s private database the item belongs to.

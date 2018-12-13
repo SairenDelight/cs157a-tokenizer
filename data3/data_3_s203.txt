@@ -1,0 +1,2 @@
+PROPOSED HOMOMORPHIC ENCRYPTION AND SECURE OUTSOURCED COMPARISON SCHEMES 
+In this section, we propose an ef.cient homomorphic encryption scheme.

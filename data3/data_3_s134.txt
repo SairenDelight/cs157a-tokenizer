@@ -1,0 +1,1 @@
+There are also techniques to detect dishonest clouds [17], [18], and dishonest clouds could be detected by simply comparing the mining results from different clouds.

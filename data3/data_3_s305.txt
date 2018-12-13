@@ -1,0 +1,1 @@
+A data owner, say D1, runs KeyGen(¦Ë) to generate a secret key key SK and a public parameter p of the proposed homomorphic encryption scheme.

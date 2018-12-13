@@ -1,0 +1,1 @@
+Let n and n be the transaction count of the joint database with and without .ctitious transactions, respectively.

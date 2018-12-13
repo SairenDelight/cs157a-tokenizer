@@ -1,0 +1,1 @@
+The other data owners (known as slaves) insert .ctitious transactions to their respective datasets, and send the datasets to the master.

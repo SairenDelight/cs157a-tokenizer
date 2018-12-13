@@ -1,0 +1,1 @@
+Privacy-preserving measures usually result in decreased performance of data mining, and therefore, any trade-off has to be realistic.

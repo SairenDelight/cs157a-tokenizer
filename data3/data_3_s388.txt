@@ -1,0 +1,1 @@
+Note: From (1), we observe that the ECVR can be used to determine whether the con.dence is over Tc or not.

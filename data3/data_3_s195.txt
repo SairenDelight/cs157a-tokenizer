@@ -1,0 +1,1 @@
+For example, in Paillier encryption, let EPK () be the function of encrypting with the public key, and ¡°.¡± is modular multiplication in Paillier.

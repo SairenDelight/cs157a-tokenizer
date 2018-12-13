@@ -1,0 +1,1 @@
+If the addition operation is allowed, then the scheme is known as additive homomorphic encryption.

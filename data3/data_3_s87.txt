@@ -1,0 +1,1 @@
+We note that one of the frequent itemset mining solutions in [13] can achieve the same privacy level as our proposed solutions.

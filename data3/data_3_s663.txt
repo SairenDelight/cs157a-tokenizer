@@ -1,0 +1,1 @@
+[9] 	J. Vaidya and C. Clifton, ¡°Privacy preserving association rule mining in vertically partitioned data,¡± in Proc.

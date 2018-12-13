@@ -1,0 +1,1 @@
+[34] 	C. Su and K. Sakurai, ¡°A distributed privacy-preserving association rules mining scheme using frequent-pattern tree,¡± in Proc.

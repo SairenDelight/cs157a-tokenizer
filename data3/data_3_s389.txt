@@ -1,0 +1,4 @@
+Supp(X ¡ÈY ) ¡Án1 .Supp(X) ¡Án2 ¡Ý0 
+.Supp(X ¡ÈY )/Supp(X) ¡Ýn2/n1 
+.Con f (X .Y ) ¡ÝTc (1) 
+5) 	The cloud returns association rule candidates, ESVRs and ECVRs to involved data owners.

@@ -1,0 +1,1 @@
+As vertically partitioned databases are being mined, we also assume that each owner has more knowledge about other private databases¡¯ TIDs.

@@ -1,0 +1,1 @@
+To ¡°hide¡± the data owner¡¯s raw data from the cloud, we adapt the concept outlined in [16] by encrypting items with a substitution cipher, and adding .ctitious transactions as a mitigation against frequency analy-sis attacks on the substitution cipher.

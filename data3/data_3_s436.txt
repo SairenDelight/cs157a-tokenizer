@@ -1,0 +1,2 @@
+By examining the sum of these random ingredients, 
+data owners can be assured that any chosen random ingredient will be masked.

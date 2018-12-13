@@ -1,0 +1,1 @@
+The (honest but curious) cloud is tasked with the compiling and storing of databases received from different data owners, the mining of association rules or frequent itemsets for data owners, and the sending of the mining result to relevant data owners.

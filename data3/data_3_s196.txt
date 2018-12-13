@@ -1,0 +1,1 @@
+Given EPK (m1), EPK (m2) and the public key used in the encryption, one can compute EPK (m1+m2) by performing a modular multiplication of EPK (m1) and EPK (m2).

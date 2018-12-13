@@ -1,0 +1,1 @@
+If each data owner has one or more columns in the joint database, the database is considered vertically parti-tioned.

@@ -1,0 +1,4 @@
+i=
+V. PRIVACY-PRESERVING OUTSOURCED MINING 
+
+In this section, we present our privacy-preserving associa-tion rule mining and frequent itemset mining solutions using the homomorphic encryption scheme and secure comparison scheme proposed in Section IV as building blocks.

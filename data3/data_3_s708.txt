@@ -1,0 +1,2 @@
+Available: http://dx.doi.org/10.1007/978-3-642-39256-6_17 
+[18] 	R. Liu and H. Wang, ¡°Result integrity veri.cation of outsourced privacy-preserving frequent itemset mining,¡± in Proc.

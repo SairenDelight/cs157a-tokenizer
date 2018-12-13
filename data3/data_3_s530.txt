@@ -1,0 +1,1 @@
+Let m be the average transaction size.

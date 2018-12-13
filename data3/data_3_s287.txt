@@ -1,0 +1,1 @@
+To allow the cloud to accurately mine the database (which has .ctitious transactions), data owners tag each transaction in their outsourced databases and joint database with an encrypted realness value (ERV) using our customized homomorphic encryption scheme.

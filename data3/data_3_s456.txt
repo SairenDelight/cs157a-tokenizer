@@ -1,0 +1,1 @@
+Running time comparison (t = 4and k = 12).

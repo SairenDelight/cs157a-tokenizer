@@ -1,0 +1,1 @@
+Compared with most solutions, our solutions achieve a higher privacy level, as most existing solutions require either the sharing / exposure of raw data or the disclosure of the exact supports to data owners.

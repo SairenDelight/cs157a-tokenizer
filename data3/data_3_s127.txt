@@ -1,0 +1,1 @@
+Data owners can also request the cloud to mine association rules or frequent itemsets from the joint database on their behalf.

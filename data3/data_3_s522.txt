@@ -1,0 +1,1 @@
+Therefore, the number of communication rounds does not grow if t, frequent itemsets, or association rules increases.

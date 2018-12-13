@@ -1,0 +1,4 @@
+From a known (mi ,ci ) pair, the attacker can get a nonlinear equation of three unknowns q,s,ri : 
+s(q ¡Ári +mi ) =ci 
+
+From w known pairs, the attacker can generate an under-determined nonlinear system of w equations, and the num-ber of unknowns are w + 2.

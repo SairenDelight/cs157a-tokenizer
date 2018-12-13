@@ -1,0 +1,1 @@
+The traf.c and cost in classic algorithms are O(n ¡Á m).

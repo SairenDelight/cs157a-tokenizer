@@ -1,0 +1,2 @@
+(c1 ¡Ác2) mod p = sd1 (r1q +m1) mod p ¡Ásd2 (r2q +m2) mod p = sd1+d2 (r1r2q2 +r1qm2 +m1r2q +m1 ¡Ám2) mod p = sd1+d2 ((r1r2q +r1m2 +m1r2)q +m1 ¡Ám2) mod p 
+2) Homomorphic Addition: As shown below, the ciphertext of m1 +m2 mod q can be computed by a modular addition of c1 and c2 if d1 = d2.

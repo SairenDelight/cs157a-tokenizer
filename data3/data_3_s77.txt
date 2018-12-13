@@ -1,0 +1,1 @@
+data owners can outsource their encrypted data and mining task to a semi-trusted (i.e.

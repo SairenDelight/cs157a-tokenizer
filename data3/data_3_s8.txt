@@ -1,0 +1,1 @@
+Based on our experiment .ndings using different parameters and data sets, we demonstrate that the run time in each of our solutions is only one order higher than that in the best non-privacy-preserving data mining algorithms.

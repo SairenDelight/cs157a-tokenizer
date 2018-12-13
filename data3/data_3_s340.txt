@@ -1,0 +1,1 @@
+The Eclat algorithm [7] is chosen over other classic algorithms here because it can generate the TID sets required in the next step as a byproduct.

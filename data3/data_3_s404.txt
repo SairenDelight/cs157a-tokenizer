@@ -1,0 +1,1 @@
+So cracking one of these databases by item frequency analysis is independent of other databases.

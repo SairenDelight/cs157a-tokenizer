@@ -1,0 +1,1 @@
+p is shared with other data owners and the cloud, while SK is shared only with data owners.

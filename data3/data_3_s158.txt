@@ -1,0 +1,1 @@
+Again, we do not assume any data owner to be colluding with the cloud.

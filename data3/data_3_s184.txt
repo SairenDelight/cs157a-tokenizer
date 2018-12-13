@@ -1,0 +1,1 @@
+B. Cryptographic Hash Function A cryptographic hash function H () has the properties of pre-image resistance and collision resistance.

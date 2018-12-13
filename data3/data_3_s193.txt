@@ -1,0 +1,1 @@
+Additive homomorphic encryption also allows the user to obtain the ciphertext of m1¡Ám2 by performing m2 times of ¡°.¡± computation on m1¡¯s ciphertext.

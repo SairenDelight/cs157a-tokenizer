@@ -1,0 +1,1 @@
+Since the publication of this seminal work, a number of privacy-preserving association rule mining or frequent itemset mining solutions have been published in the literature (see [11]¨C[13], [28]¨C[31]).

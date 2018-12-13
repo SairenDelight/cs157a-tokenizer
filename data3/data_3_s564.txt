@@ -1,0 +1,1 @@
+In addition, this solution¡¯s method cannot be used to mine association rules because securely computing con.dence is more complicated than computing support.

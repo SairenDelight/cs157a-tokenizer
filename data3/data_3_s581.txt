@@ -1,0 +1,1 @@
+The data owner revises these itemsets¡¯ supports by subtracting them with these itemsets¡¯ corresponding occurrence counts in the .ctitious transactions respectively.

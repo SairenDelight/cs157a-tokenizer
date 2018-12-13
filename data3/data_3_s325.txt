@@ -1,0 +1,1 @@
+We remark that any two ERVs are different even if their plaintexts are the same because of the probabilistic property of the encryption scheme.

@@ -1,0 +1,1 @@
+This solution is resilient to chosen-plaintext attacks on encrypted items, but it is vulnerable to frequency analysis attacks.

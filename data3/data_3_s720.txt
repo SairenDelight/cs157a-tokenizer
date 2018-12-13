@@ -1,0 +1,2 @@
+[21] 	F. Giannotti, L. V. S. Lakshmanan, A. Monreale, D. Pedreschi, and 
+W. Wang, ¡°Privacy-preserving data mining from outsourced databases,¡± in Proc.

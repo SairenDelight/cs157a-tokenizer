@@ -1,0 +1,2 @@
+Ts ) = (E(Supp(Z)) + cs ) mod p 
+and compares Supp(Z) .

@@ -1,0 +1,1 @@
+2) Comparing With the Solution Achieving the Same Privacy Level: To the best of our knowledge, the only existing privacy-preserving solution that does not leak sen-sitive information of the raw data is one of [13]¡¯s frequent itemset mining solutions (hereafter referred to as ¡°[13]¡¯s strong solution¡± in this paper).

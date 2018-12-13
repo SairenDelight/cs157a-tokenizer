@@ -1,0 +1,2 @@
+The secure comparison scheme for the above problem is as follows: 
+.

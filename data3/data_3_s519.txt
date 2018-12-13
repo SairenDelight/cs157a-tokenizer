@@ -1,0 +1,1 @@
+In the preprocessing stage, some keys and parameters are shared among t data owners.

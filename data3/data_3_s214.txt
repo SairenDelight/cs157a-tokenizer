@@ -1,0 +1,1 @@
+The algorithm outputs a ciphertext c ¡û E(SK, m, d).

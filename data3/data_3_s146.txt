@@ -1,0 +1,1 @@
+In the typical system setup for vertically partitioned databases, data owners participate in the collaborative data mining in order to obtain the mining result.

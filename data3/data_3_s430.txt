@@ -1,0 +1,1 @@
+If the random ingredient matches the pattern of the customized random ingredient¡¯s most signi.cant bits, it is an indication that the ERV with the customized random ingredient has been used to compute the ESVR.

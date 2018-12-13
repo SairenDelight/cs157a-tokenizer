@@ -1,0 +1,1 @@
+Reference [19] proposed a solution to counter fre-quency analysis attack on substitution cipher.

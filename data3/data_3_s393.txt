@@ -1,0 +1,1 @@
+If yes, the data owners will then decrypt X and Y to recover the real association rule in plaintext (as items in the joint database are encrypted with a substitution cipher).

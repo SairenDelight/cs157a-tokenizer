@@ -1,0 +1,1 @@
+Every data owner decrypts r to verify the bit length of random ingredient (explained in Section VI-B).

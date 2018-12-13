@@ -1,0 +1,2 @@
+[16] 	F. Giannotti, L. V. S. Lakshmanan, A. Monreale, D. Pedreschi, and 
+H. Wang, ¡°Privacy-preserving mining of association rules from out-sourced transaction databases,¡± IEEE Syst.

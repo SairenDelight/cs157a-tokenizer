@@ -1,0 +1,1 @@
+To reduce ciphertext size, data owners can defer the step of initialization for homomorphic encryption until the exact values are obtained.

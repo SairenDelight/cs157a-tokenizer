@@ -1,0 +1,1 @@
+[6] 	R. Agrawal and R. Srikant, ¡°Fast algorithms for mining association rules,¡± in Proc.

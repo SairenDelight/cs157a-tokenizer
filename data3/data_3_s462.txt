@@ -1,0 +1,1 @@
+In other words, we do not need a secure comparison scheme to conceal more information.

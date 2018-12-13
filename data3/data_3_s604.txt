@@ -1,0 +1,1 @@
+To realize our solutions, an ef.cient homomorphic encryp-tion scheme and a secure outsourced comparison scheme were presented in this paper.

@@ -1,0 +1,1 @@
+Security Under Data Owners¡¯ Attacks Attack Via Chosen Random Ingredients: In our solutions, data owners are not required to exchange any plaintext or ciphertext (i.e., encryption of their private data).

@@ -1,0 +1,6 @@
+APPENDIX 
+INSERTING FICTITIOUS TRANSACTIONS 
+( [16]¡¯s ALGORITHM) 
+
+
+An algorithm to counter frequency analysis attacks on the outsourced database encrypted with a substitution cipher was proposed in [16].

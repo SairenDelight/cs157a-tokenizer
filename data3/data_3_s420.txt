@@ -1,0 +1,1 @@
+To hide such information, the TIDs in the outsourced databases are replaced by the hash values of the original TIDs.

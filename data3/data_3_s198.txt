@@ -1,0 +1,5 @@
+EPK (m1 + m2) = EPK (m1) ¡Á EPK (m2) 
+EPK (m1 ¡Á m2) = EPK (m1) ¡Á EPK (m1) ¡Á ...EPK (m1) 
+(m2 multiplications) = EPK (m1)m2 
+
+In the remainder of this paper, .

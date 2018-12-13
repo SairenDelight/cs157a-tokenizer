@@ -1,0 +1,4 @@
+Property of the Proposed Homomorphic Encryption 1) Homomorphic Multiplication: Let c1, c2 be the cipher-
+d1
+
+texts of two plaintexts m1, m2.

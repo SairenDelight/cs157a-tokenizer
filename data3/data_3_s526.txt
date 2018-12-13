@@ -1,0 +1,2 @@
+We can observe from Tables VII and VII that the joint database size in our solutions is a few times larger and the size grows with k and t. 
+The number of ERVs is at most n ¡Á t = O(n ¡Á t).

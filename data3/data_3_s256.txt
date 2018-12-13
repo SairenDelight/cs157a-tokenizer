@@ -1,0 +1,1 @@
+Secondly, the cloud computes Q =cu + ti=1 ¦Ìi mod p, and sends Q to data owners.

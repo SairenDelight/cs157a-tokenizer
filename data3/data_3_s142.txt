@@ -1,0 +1,1 @@
+This is reasonable for many cases; other-wise, even the data owners themselves need to learn frequent itemsets.

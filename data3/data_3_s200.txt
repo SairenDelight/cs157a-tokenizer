@@ -1,0 +1,1 @@
+In a multiplicative homomorphic encryption scheme, the ciphertext of the product of two plaintexts, m1 ¡Á m2, can be obtained with some kind of computation ¡°.¡± on the cipher-texts of m1 and m2, without .rst decrypting m1 and m2 or requiring the decryption key.

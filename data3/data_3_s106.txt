@@ -1,0 +1,1 @@
+This paper proposes a ciphertext tag approach for canceling out .ctitious data¡¯s effect on mining result.

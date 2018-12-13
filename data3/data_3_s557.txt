@@ -1,0 +1,1 @@
+Some solutions [12], [13] use asymmetric encryp-tion to compute the supports of itemsets, while other solu-tions [9], [28]¨C[30] use a secure scalar product protocol, a set intersection cardinality protocol or a secret sharing scheme to perform these computations.

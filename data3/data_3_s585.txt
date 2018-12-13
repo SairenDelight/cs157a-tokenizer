@@ -1,0 +1,1 @@
+To cancel out .ctitious transactions, both [21] and [16] require the data owner to count itemset occurrences in .cti-tious transactions.

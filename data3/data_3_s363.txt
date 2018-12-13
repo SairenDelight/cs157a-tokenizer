@@ -1,0 +1,1 @@
+For each seemingly frequent itemset, a data owner .rst decrypts its ESVR to determine whether the itemset is really a real frequent.

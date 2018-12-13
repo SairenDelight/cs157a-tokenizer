@@ -1,0 +1,2 @@
+C. Homomorphic Encryption 
+Homomorphic encryption scheme allows one or more plain-text operations (e.g addition and multiplication) to be carried out on the ciphertexts.

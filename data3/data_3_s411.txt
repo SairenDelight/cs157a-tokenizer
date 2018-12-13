@@ -1,0 +1,1 @@
+Because cracking one of these itemsets is independent of the other itemsets, the probability of cracking X is no more than (1/k)b.As t ¡Ýb ¡Ý1, the crack probability for an item or itemset in our solutions is still no more than 1/k.

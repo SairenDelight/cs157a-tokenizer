@@ -1,0 +1,1 @@
+These two tech-niques have been employed in applications such as market basket analysis [1], health care [2], web usage mining [3], bioinformatics [4] and prediction [5].

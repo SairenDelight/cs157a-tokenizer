@@ -1,0 +1,1 @@
+[36] 	J.-L. Lin and J. Y.-C. Liu, ¡°Privacy preserving itemset mining through fake transactions,¡± in Proc.

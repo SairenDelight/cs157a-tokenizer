@@ -1,0 +1,7 @@
+In the mining stage, all mining results can be sent to data 
+TABLE VIII 
+TRANSACTION COUNT OF JOINT DATABASE (PUMSB) 
+
+
+
+owners in a communication round.

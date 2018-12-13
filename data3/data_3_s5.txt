@@ -1,0 +1,1 @@
+Our solutions are designed for outsourced databases that allow multiple data owners to ef.ciently share their data securely without compromising on data privacy.

@@ -1,0 +1,1 @@
+In our privacy-preserving data mining solutions, data owners require the cloud to compare supports/ con.dences with thresholds.

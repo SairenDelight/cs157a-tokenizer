@@ -1,0 +1,1 @@
+To encrypt the database, all items in the database are replaced with their corresponding ciphertexts.

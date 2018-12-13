@@ -1,0 +1,2 @@
+In other words, when given a hash value h, it is computationally infeasible to .nd a message m satisfying H (m) = h. The property of collision resistance means the collision of hash values are very rare 
+¨C i.e.

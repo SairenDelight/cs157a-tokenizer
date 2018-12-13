@@ -1,0 +1,1 @@
+For a candidate X .Y , the data owners will need to .rst decrypt the ESVR of X ¡ÈY to determine whether Supp(X ¡ÈY ) ¡ÝTs or not.

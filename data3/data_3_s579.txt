@@ -1,0 +1,1 @@
+The data owner sends the encrypted database of both the real and .ctitious transactions to the cloud.

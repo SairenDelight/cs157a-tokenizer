@@ -1,0 +1,1 @@
+Thirdly, for each item in each group, the data owner calculates the difference between the item¡¯s support and the highest support in the group.

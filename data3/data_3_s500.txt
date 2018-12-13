@@ -1,0 +1,7 @@
+We can also observe that data owner¡¯s running time decreases 
+TABLE VI TABLE VII 
+ESTIMATED RUNNING TIME OF [13]¡¯s SOLUTION TRANSACTION COUNT OF JOINT DATABASE (RETAIL) 
+
+
+
+when t increases.

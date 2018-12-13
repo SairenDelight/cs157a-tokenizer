@@ -1,0 +1,2 @@
+(1) 
+Applying this algorithm in vertically partitioned data-bases will not undermine the security.

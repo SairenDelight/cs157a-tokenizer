@@ -1,0 +1,3 @@
+MODELS AND DESIGN GOALS In this section, we formalize the system model and secu-
+
+rity model used in this paper, and identify the design goals.

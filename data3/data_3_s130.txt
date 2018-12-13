@@ -1,0 +1,2 @@
+Security Model 
+The cloud is considered honest but curious in this paper.

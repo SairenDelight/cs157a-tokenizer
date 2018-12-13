@@ -1,0 +1,1 @@
+Recall that E(Supp(Z)) has been computed in the previous step.

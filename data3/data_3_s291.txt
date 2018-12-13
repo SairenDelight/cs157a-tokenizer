@@ -1,0 +1,1 @@
+In the mining stage, the cloud mines association rules for data owners in a privacy-preserving manner.

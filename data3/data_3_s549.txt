@@ -1,0 +1,1 @@
+The server veri.es if the rule is quali.ed or not.

@@ -1,0 +1,1 @@
+Association rules can then be found given frequent itemsets and their supports.

@@ -1,0 +1,1 @@
+Frequency analysis, the analysis of frequencies of ciphertext units or unit groups, has been used to break classical ciphers such as substitution ciphers.

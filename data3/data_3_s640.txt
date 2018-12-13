@@ -1,0 +1,1 @@
+[3] 	B. Mobasher, H. Dai, T. Luo, and M. Nakagawa, ¡°Effective personal-ization based on association rule discovery from Web usage data,¡± in Proc.

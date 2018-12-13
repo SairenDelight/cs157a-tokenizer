@@ -1,0 +1,5 @@
+To use the proposed homomorphic encryption and out-sourced secure comparison schemes in our solutions, the bit lengths of keys and parameters must be carefully selected based not only on the security parameter ¦Ë 
+TABLE IV 
+JOINT DATABASE IN THE CLOUD (AFTER PREPROCESSING STAGE) 
+
+but also estimated maximum ciphertext degree and joint database size.

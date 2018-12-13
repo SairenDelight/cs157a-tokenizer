@@ -1,0 +1,1 @@
+We remark that it is not required that all owners¡¯ private databases share the same set of TIDs, although it is expected that they share a lot of TIDs.

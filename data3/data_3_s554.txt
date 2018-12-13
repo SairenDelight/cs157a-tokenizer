@@ -1,0 +1,1 @@
+Though .ctitious data are added in datasets to lower data usability, the master is able to learn signi.cant information about other data owners¡¯ raw data from the received datasets.

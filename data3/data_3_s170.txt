@@ -1,0 +1,6 @@
+PRELIMINARY:SUBSTITUTION CIPHER, 
+CRYPTOGRAPHIC HASH FUNCTION AND 
+HOMOMORPHIC ENCRYPTION 
+
+
+In this section, we outline the substitution cipher, crypto-graphic hash function and homomorphic encryption, which serve as the building blocks in our privacy-preserving data mining solutions.

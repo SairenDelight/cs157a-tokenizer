@@ -1,0 +1,1 @@
+For exam-ple, encryption computing in our scheme is three orders of magnitude faster than [14] and [15] respectively.

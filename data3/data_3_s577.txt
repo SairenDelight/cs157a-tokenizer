@@ -1,0 +1,1 @@
+After inserting the .ctitious transactions, any item in the encrypted database will share the same frequency with at least k .

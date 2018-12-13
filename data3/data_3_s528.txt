@@ -1,0 +1,1 @@
+Normally, dmax can be viewed as a small constant.

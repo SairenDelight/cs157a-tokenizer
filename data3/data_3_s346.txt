@@ -1,0 +1,1 @@
+Let ERVi, j be the ERV for data owner Dj ¡¯s partition of the i-th transaction.

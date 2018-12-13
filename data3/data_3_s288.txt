@@ -1,0 +1,1 @@
+A realness value (RV for short) is either 0 or 1, which indicates that the transaction is .ctitious or real, respectively.

@@ -1,0 +1,1 @@
+To crack X, the attacker has to crack all b itemset(s).

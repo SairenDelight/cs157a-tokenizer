@@ -1,0 +1,1 @@
+If data owners only want to learn the association rules, without learning the frequent itemsets, the cloud does not need to return these itemsets and ESVRs in the running.

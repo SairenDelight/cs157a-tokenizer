@@ -1,0 +1,1 @@
+In addition, due to the use of the underlying homomorphic encryption scheme and secure comparison scheme, the exact supports and con.dences are concealed from any data owner.

@@ -1,0 +1,1 @@
+In many settings, our solutions¡¯ traf.c is not any higher than the traf.c of [13]¡¯s strong solution.

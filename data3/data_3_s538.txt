@@ -1,0 +1,4 @@
+RELATED WORK 
+
+A. Privacy-Preserving Association Rule Mining and Frequent Itemset Mining on Vertically Partitioned Databases 
+In [9], the .rst work to identify and address privacy issues in vertically partitioned databases, a secure scalar product protocol is presented and used to build a privacy-preserving frequent itemset mining solution.

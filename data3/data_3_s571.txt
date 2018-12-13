@@ -1,0 +1,1 @@
+Generally, data items in the database are encrypted using a substitution cipher prior to outsourcing.

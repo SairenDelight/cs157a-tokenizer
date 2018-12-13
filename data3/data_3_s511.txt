@@ -1,0 +1,1 @@
+Reference [13]¡¯s strong solution requires about n ¡Á F encryptions as well as (n + Ts ) ¡Á F homomorphic additions and scalar multiplications.

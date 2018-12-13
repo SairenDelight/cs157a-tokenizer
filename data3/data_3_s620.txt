@@ -1,0 +1,1 @@
+The data owner swaps items from different groups to ensure that all items in the same group do not occur together in the same transaction.

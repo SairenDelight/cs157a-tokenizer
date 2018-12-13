@@ -1,0 +1,1 @@
+Substitution cipher is subject to frequency analysis attack if the frequencies of message units are different.

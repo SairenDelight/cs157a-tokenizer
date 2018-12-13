@@ -1,0 +1,1 @@
+This solution cannot be used for association rule mining, whilst we have solutions for both association rule mining and frequent itemset mining.

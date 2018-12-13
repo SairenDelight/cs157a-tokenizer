@@ -1,0 +1,1 @@
+Let m be a secret integer unknown to the cloud and data owners, where m is in the range to the cloud, and q > ¦Á, ¦Â> 0.

@@ -1,0 +1,1 @@
+To correctly decrypt m1 ¡Ám2 from its ciphertext, (r1r2q +r1m2 +m1r2)q +m1 ¡Ám2 < p must be satis.ed where (r1r2q+r1m2+m1r2) is the random ingredient.

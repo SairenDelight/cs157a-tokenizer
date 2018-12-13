@@ -1,0 +1,1 @@
+Because of the pre-image resistance property of cryptographic hash function, the cloud cannot recover original TIDs from the TIDs used in the outsourced databases.

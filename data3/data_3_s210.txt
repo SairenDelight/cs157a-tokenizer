@@ -1,0 +1,3 @@
+Key generation algorithm KeyGen() 
+(s, q, p) ¡û KeyGen(¦Ë) 
+The key generation algorithm KeyGen() is a probabilistic algorithm, which takes a security parameter ¦Ë as input and outputs a secret key SK = (s, q) and a public parameter p.Both p and q are big primes, and p >q.

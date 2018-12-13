@@ -1,0 +1,1 @@
+3, in our association rule mining solu-tion, each data owner owns a private database, and data owners collaboratively mine their joint database¡¯s association rules with the assistance of the cloud.

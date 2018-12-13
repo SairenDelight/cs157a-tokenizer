@@ -1,0 +1,1 @@
+A transaction database is a set of transactions, and each transaction is a set of data items with a unique TID (Transaction ID).

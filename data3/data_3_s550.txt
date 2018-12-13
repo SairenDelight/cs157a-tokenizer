@@ -1,0 +1,1 @@
+Similar to our solutions, a semi-trusted third-party is utilized for the mining.

@@ -1,0 +1,3 @@
+Encryption algorithm E() 
+E(SK, m, d) =sd (rq +m) mod p 
+The encryption algorithm E() is a probabilistic algorithm, which takes a secret key SK , a plaintext m ¡Ê Fq and a parameter d as inputs.

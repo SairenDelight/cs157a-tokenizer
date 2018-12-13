@@ -1,0 +1,2 @@
+The scheme supports many homomorphic additions and limited number of homomorphic multiplications, and comprises the following three algorithms: 
+.

@@ -1,0 +1,1 @@
+In Section IV, we present our proposed homomorphic encryption scheme and secure comparison scheme, which will serve as the basis of our solutions.

@@ -1,0 +1,3 @@
+D(SK, c, d) = (c ¡Ás.d mod p) mod q = ((sd (rq +m) mod p) ¡Ás.d mod p) mod q = (rq +m) mod q = m 
+
+B.

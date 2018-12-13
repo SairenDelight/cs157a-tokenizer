@@ -4,7 +4,6 @@ from nltk.util import ngrams
 from nltk.corpus import stopwords
 from nltk.stem.porter import *
 from openpyxl import Workbook
-import mysql.connector
 import os
 import sys
 import math
@@ -12,20 +11,15 @@ import time
 
 
 
-def getDirectoryOfData():
+def getDirectoryOfData(folder):
     '''
         This function will get the 'data' directory of current folder
     '''
-    dataDir = os.path.realpath('.') +'/data'
+    dataDir = os.path.realpath('.') +'/' + folder
     dataFiles = os.listdir(dataDir)
     filesPath = []
     for files in dataFiles:
         filesPath.append(dataDir+"/"+files)
-    dataDir = os.path.realpath('.') + '/sentence'
-    dataFiles = os.listdir(dataDir)
-    for files in dataFiles:
-        filesPath.append(dataDir+"/"+files)
-    # print(filesPath)
     return filesPath
 
 class Tokenizer(object):
@@ -93,7 +87,7 @@ class Tokenizer(object):
         self.__calculate_max_gap_wo_db()
         for token,values in self.__tokenized_stemmed_words.items():
             for index,(key,value) in enumerate(values[0].items()):
-                if(value[2] >= self.max_gap and value[2] <= 0.2):
+                if(value[2] >= self.max_gap):
                     self.__key_words[token] = 1
         for key,value in self.__tokenized_stemmed_words.items():
             print("Token: [" + str(key) + "] ||| Value: [" + str(value)+"]")
@@ -578,11 +572,11 @@ class Tokenizer(object):
 
 
 
-def main():
+def main(folder):
     '''
         Runs the entire tokenizer process.
     '''
-    data_Files_Path = getDirectoryOfData()
+    data_Files_Path = getDirectoryOfData(folder)
     wb = Workbook()
     data_excel_sheet = wb.active
 
@@ -598,4 +592,6 @@ def main():
     # print(tokenizer1.getTFIDFList())
     # wb.save('Tokenizer_data.xlsx')
 
-main()
+folder = input("Which data folder would you like to run? /data1 /data2 /data3\n")
+print("Getting data from folder /"+folder +"...")
+main(folder)

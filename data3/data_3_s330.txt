@@ -1,0 +1,1 @@
+Note that a transaction in a data owner¡¯s private database is a transaction partition of data owners¡¯ joint database.

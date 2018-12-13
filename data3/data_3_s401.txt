@@ -1,0 +1,1 @@
+These differences will not, however, undermine the security under a frequency analysis attack, as explained below.

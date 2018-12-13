@@ -1,0 +1,3 @@
+Note: Due to the homomorphic property of the underlying encryption scheme, Q is the ciphertext of (m ¡Áu + t 1 vi ) mod q.
+i=
+.
